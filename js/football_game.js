@@ -1,6 +1,6 @@
 "use strict";
 
-$("h1").click(() => {
+$("h1").click((event) => {
     $(event.currentTarget).css("color", "orange");
 });
 
@@ -20,20 +20,70 @@ let players = [
     }
 ]
 
+let keys = [];
+
+let movementY = (speed) => {
+    $( document).keydown((e) => {
+        keys[e.which] = true;
+        console.log(keys.length);
+        //up
+        if(e.keyCode == 87){
+            p2Y-=speed;
+            console.log(speed);
+        }
+        //down
+        if(e.keyCode == 83){
+            console.log(speed);
+            p2Y+=speed;
+        }
+        //right
+        if(e.keyCode == 65){
+            console.log(speed);
+            p2X-=speed;
+        }
+        // left
+        if(e.keyCode == 68){
+            console.log(speed);
+            p2X+=speed;
+        }
+    })
+}
+
+let keyControl = () => {
+    $(document).keyup((e) => {
+        delete keys[e.which];
+    })
+
+}
+
+
+
+//
+// const movementX = (speed) => {
+//     $(document).keydown((e) => {
+//         console.log(event.keyCode);
+//
+//     })
+// }
+
 //players declared and field/fieldcontext initialized
 let footballField;
 let fieldContext;
 let player1 = players[0];
 let player2 = players[2];
+// movement(1);
 
 //initial call to draw the field and create the players
 window.onload = () => {
     console.log("hello from football game");
     footballField = $("#football-field").get(0);
     fieldContext = footballField.getContext("2d");
-    setInterval(drawField,50);
+    // movementX(3);
+    movementY(3);
+    movementY(3);
+    keyControl();
+    setInterval(drawField,1);
     requestAnimationFrame(drawField);
-    movement(1);
     $("#player-1").text(player1.name);
     $("#player-2").text(player2.name);
 }
@@ -42,7 +92,7 @@ window.onload = () => {
 const drawField = () => {
     fieldContext.fillStyle = "green";
     fieldContext.fillRect(0,0,footballField.width, footballField.height)
-    movement(1);
+    // movement(1);
     drawPlayer1(player1);
     drawPlayer2(player2);
 
@@ -65,16 +115,20 @@ let p1Y = 150
 
 let p2Y = 50
 
-// let movement = (speed) => {
-//     $("document").key((event) => {
+// const movement = (speed) => {
+//     $("document").keypress((event) => {
 //         console.log(event.keyCode);
 //         if(event.keyCode == 119){
 //             p2Y-=speed;
+//             console.log(speed);
 //         }   if(event.keyCode == 115){
+//             console.log(speed);
 //             p2Y+=speed;
 //         }   if(event.keyCode == 150){
+//             console.log(speed);
 //             p2X-=speed;
 //         }   if(event.keyCode == 150){
+//             console.log(speed);
 //             p2X+=speed;
 //         }
 //     })
