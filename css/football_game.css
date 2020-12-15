@@ -3,6 +3,12 @@ h1{
     text-align: center;
 }
 
+/*canvas{*/
+/*    width: 100%;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*}*/
+
 #scoreboard{
     display: flex;
     width: 1600px;
@@ -10,5 +16,9 @@ h1{
 }
 
 img{
-    display: none;
+    background-color: blue;
 }
+
+/*.player-img{*/
+/*    position: relative;*/
+/*}*/

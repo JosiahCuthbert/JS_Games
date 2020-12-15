@@ -8,15 +8,15 @@ $("h1").click((event) => {
 let players = [
     {
         name: "Joe",
-        playerImage: $("#joe-image").get(0)
+        playerImage: $("#joe").get(0)
     },
     {
         name: "Kirsten",
-        playerImage: $("#kirsten-image").get(0)
+        playerImage: $("#kirsten").get(0)
     },
     {
         name: "Dak",
-        playerImage: $("#dak-image").get(0)
+        playerImage: $("#dak").get(0)
     }
 ]
 
@@ -25,6 +25,10 @@ let keys = [];
 let movementY = (speed) => {
     $( document).keydown((e) => {
         keys[e.which] = true;
+        console.log("p2Y: " + p2Y);
+        console.log("p2X: " + p2X);
+        console.log("p1Y: " + p1Y);
+        console.log("p1X: " + p1X);
         console.log(keys.length);
         //up
         if(e.keyCode == 87){
@@ -79,8 +83,7 @@ window.onload = () => {
     footballField = $("#football-field").get(0);
     fieldContext = footballField.getContext("2d");
     // movementX(3);
-    movementY(3);
-    movementY(3);
+    movementY(1);
     keyControl();
     setInterval(drawField,1);
     requestAnimationFrame(drawField);
@@ -105,15 +108,25 @@ let drawPlayer1 = (player) => {
 
 let drawPlayer2 = (player) => {
     fieldContext.drawImage(player.playerImage, p2X, p2Y);
+
 }
+
+//try calculating X/Y with half of img width and height to get img center value
 
 let p2X = 30;
 
-let p1X = 60
+let p1X = 30;
 
-let p1Y = 150
+let p1Y = 100;
 
-let p2Y = 50
+let p2Y = 100;
+
+const tackle = () => {
+    if(p2X === p1X && p2Y === p1Y){
+        console.log("tackle");
+    }
+}
+
 
 // const movement = (speed) => {
 //     $("document").keypress((event) => {
