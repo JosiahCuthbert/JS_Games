@@ -8,7 +8,7 @@ $("h1").click((event) => {
 let players = [
     {
         name: "Joe",
-        playerImage: $("#joe").get(0)
+        playerImage: $("#joe-image").get(0)
     },
     {
         name: "Kirsten",
@@ -16,19 +16,27 @@ let players = [
     },
     {
         name: "Dak",
-        playerImage: $("#dak").get(0)
+        playerImage: $("#dak-image").get(0)
     }
 ]
+
+let playerPosXEQ = (player) => {
+    return player.playerImage.width/2;
+}
+
+let playerPosYEQ = (player) => {
+    return player.playerImage.height/2;
+}
 
 let keys = [];
 
 let movementY = (speed) => {
     $( document).keydown((e) => {
         keys[e.which] = true;
-        console.log("p2Y: " + p2Y);
-        console.log("p2X: " + p2X);
-        console.log("p1Y: " + p1Y);
-        console.log("p1X: " + p1X);
+        console.log("p2Y: " + (p2Y - playerPosYEQ(player2)));
+        console.log("p2X: " + (p2X - playerPosXEQ(player2)));
+        console.log("p1Y: " + (p1Y - playerPosYEQ(player1)));
+        console.log("p1X: " + (p1X - playerPosXEQ(player1)));
         console.log(keys.length);
         //up
         if(e.keyCode == 87){
@@ -83,9 +91,10 @@ window.onload = () => {
     footballField = $("#football-field").get(0);
     fieldContext = footballField.getContext("2d");
     // movementX(3);
-    movementY(1);
+    movementY(10);
     keyControl();
     setInterval(drawField,1);
+    tackle(25);
     requestAnimationFrame(drawField);
     $("#player-1").text(player1.name);
     $("#player-2").text(player2.name);
@@ -101,28 +110,42 @@ const drawField = () => {
 
 }
 
+// let drawPlayer1 = (player) => {
+//     fieldContext.drawImage(player.playerImage, p1XEQ, p1YEQ);
+//     // console.log(p1Y);
+// }
+//
+// let drawPlayer2 = (player) => {
+//     fieldContext.drawImage(player.playerImage, p2XEQ, p2YEQ);
+// }
+
 let drawPlayer1 = (player) => {
-    fieldContext.drawImage(player.playerImage, p1X, p1Y);
+    fieldContext.drawImage(player.playerImage, p1X - playerPosXEQ(player), p1Y - playerPosYEQ(player));
     // console.log(p1Y);
 }
 
 let drawPlayer2 = (player) => {
-    fieldContext.drawImage(player.playerImage, p2X, p2Y);
-
+    fieldContext.drawImage(player.playerImage, p2X - playerPosXEQ(player), p2Y - playerPosYEQ(player));
 }
 
 //try calculating X/Y with half of img width and height to get img center value
 
-let p2X = 30;
-
 let p1X = 30;
+// let p1XEQ = p1X - playerPosXEQ(player1);
 
 let p1Y = 100;
+// let p1YEQ = p1Y - playerPosYEQ(player1);
+
+let p2X = 30;
+// let p2XEQ = p2X - playerPosXEQ(player2);
 
 let p2Y = 100;
+// let p2YEQ = p2Y - playerPosYEQ(player2);
 
-const tackle = () => {
-    if(p2X === p1X && p2Y === p1Y){
+
+//not working
+const tackle = (range) => {
+    if(((p2X - playerPosXEQ(player2) >= p1X - playerPosXEQ(player1) + range) && (p2X - playerPosXEQ(player2) >= p1X - playerPosXEQ(player1) - range)) && ((p2Y - playerPosYEQ(player2) >= p1Y - playerPosYEQ(player1) + range) && (p2Y - playerPosYEQ(player2) >= p1Y - playerPosYEQ(player1) - range))){
         console.log("tackle");
     }
 }
