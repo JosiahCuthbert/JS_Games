@@ -6,20 +6,28 @@
     <link rel="stylesheet" href="css/football_game.css">
 </head>
 <body>
-    <h1 id="test">Football</h1>
-
-    <h2>Hi</h2>
+<!--    <h1 id="test">Football</h1>-->
 
     <div id="canvas-div">
-        <canvas id="football-field" width="1600px" height="801px"></canvas>
+        <canvas id="football-field" width="1400px" height="650px">
+<!--            <canvas class="endzone" id="p1-endzone" width="20px" height="100%"></canvas>-->
+<!--            <canvas class="endzone" id="p2-endzone" width="20px" height="100%"></canvas>-->
+        </canvas>
     </div>
 
     <img src="img/joe-cropped.png" class="player-img" id="joe-image" width="151" height="200">
     <img src="img/dak-cropped.png" class="player-img" id="dak-image" width="276" height="200">
 
     <div id="scoreboard">
-        <h3 id="player-1"></h3>
-        <h3 id="player-2"></h3>
+        <div id="p1-scoreboard">
+            <h3 id="p1-name"></h3>
+        </div>
+        <div id="p2-scoreboard">
+            <h3 id="p2-name"></h3>
+        </div>
+
+
+
     </div>
 
 

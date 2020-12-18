@@ -15,6 +15,29 @@ h1{
     justify-content: space-between;
 }
 
-.player-img{
-    display:none;
+
+canvas{
+    border: 10px solid white;
+    display: flex;
+    justify-content: space-around;
 }
+
+/*.endzone{*/
+/*    background-color: blue;*/
+/*}*/
+
+#canvas-div{
+    background-color: #565656;
+    border: 5px solid black;
+    padding-top: 4em;
+    padding-bottom: 4em;
+    display: flex;
+    border-radius: 150px;
+    justify-content: center;
+}
+
+.player-img{
+    display: none;
+}
+
+
