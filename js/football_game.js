@@ -5,18 +5,44 @@
 // });
 
 //players object
+
+let icons = [
+    {
+        image: $("#football-icon").get(0),
+        xEQ: -10,
+        yEQ: -20
+    },
+    {
+        image: $("#test").get(0),
+        xEQ: 0,
+        yEQ: 0
+    }
+]
+
 let players = [
     {
         name: "Joe",
-        playerImage: $("#joe-image").get(0)
-    },
-    {
-        name: "Kirsten",
-        playerImage: $("#kirsten").get(0)
+        playerImage: $("#joe-image").get(0),
+        possession: false,
+        X: null,
+        Y: null,
+        xEQ: ($("#joe-image").get(0).width/2)+3,
+        yEQ: ($("#joe-image").get(0).height/2),
+        tacklingArea: 15,
+        speed: 5,
+        agility: 5
     },
     {
         name: "Dak",
-        playerImage: $("#dak-image").get(0)
+        playerImage: $("#dak-image").get(0),
+        possession: false,
+        X: null,
+        Y: null,
+        xEQ: ($("#dak-image").get(0).width/2),
+        yEQ: ($("#dak-image").get(0).height/2)-18,
+        tacklingArea: 10,
+        speed: 5,
+        agility: 5
     }
 ]
 
@@ -28,106 +54,41 @@ let playerPosYEQ = (player) => {
     return player.playerImage.height/2;
 }
 
-// let keys = [];
+let down;
 
-// let movementY = (speed) => {
-//     $( document).keydown((e) => {
-//         keys[e.which] = true;
-//         console.log("p2Y: " + (p2Y));
-//         console.log("p2X: " + (p2X));
-//         console.log("p1Y: " + (p1Y));
-//         console.log("p1X: " + (p1X));
-//         if((p2Y === p1Y) && (p1X === p2X)){
-//             console.log("tackle");
-//         }
-//         // console.log(keys.length);
-//         //up
-//         if(e.keyCode == 87){
-//             p2Y-=speed;
-//             console.log(speed);
-//         }
-//         //down
-//         if(e.keyCode == 83){
-//             console.log(speed);
-//             p2Y+=speed;
-//         }
-//         //right
-//         if(e.keyCode == 65){
-//             console.log(speed);
-//             p2X-=speed;
-//         }
-//         // left
-//         if(e.keyCode == 68){
-//             console.log(speed);
-//             p2X+=speed;
-//         }
+
+// const incrementPos = (speed) => {
+//     player2.Y+=speed;
+// }
 //
-//         //up
-//         if(e.keyCode == 38){
-//             p1Y-=speed;
-//             console.log(speed);
-//         }
-//         //down
-//         if(e.keyCode == 40){
-//             console.log(speed);
-//             p1Y+=speed;
-//         }
-//         //right
-//         if(e.keyCode == 37){
-//             console.log(speed);
-//             p1X-=speed;
-//         }
-//         // left
-//         if(e.keyCode == 39){
-//             console.log(speed);
-//             p1X+=speed;
-//         }
-//     })
+// const decrementPos = (speed) => {
+//     player2.Y-=speed;
 // }
 
-let p1X = 30;
-let p1Y = 400;
-let p2X = 30;
-let p2Y = 100;
-
-let speed = 5;
-
-const incrementPos = (speed) => {
-    p2Y+=speed;
-}
-
-const decrementPos = (speed) => {
-    p2Y-=speed;
-}
-
 const controller = {
-    //p2Y
     87: {pressed: false, func: function(){
-            p2Y-=speed;
+            player2.Y-=player2.agility;
         }},
     83: {pressed: false, func: function(){
-            p2Y+=speed
+            player2.Y+=player2.agility
         }},
-    //p2X
     65: {pressed: false, func: function(){
-            p2X-=speed
+            player2.X-=player2.speed
         }},
     68: {pressed: false, func: function(){
-        p2X+=speed
+            player2.X+=player2.speed
         }},
-    //p1Y
     38: {pressed: false, func: function(){
-        p1Y-=speed
+            player1.Y-=player1.agility
         }},
     40: {pressed: false, func: function(){
-        p1Y+=speed
+            player1.Y+=player1.agility
         }},
-    //p1X
     37: {pressed: false, func: function(){
-        p1X-=speed
+            player1.X-=player1.speed
         }},
     39: {pressed: false, func: function(){
-        p1X+=speed
+            player1.X+=player1.speed
         }}
 }
 
@@ -162,10 +123,18 @@ const executeMoves = () => {
 let footballField;
 let fieldContext;
 
-//note: changing player order determines which player renders on top of other
-let player2 = players[2];
-let player1 = players[0];
 // movement(1);
+//note: changing player order determines which player renders on top of other
+let player1 = players[0];
+let player2 = players[1];
+
+let possessionSetter = () => {
+    if(player1.possession === false && player2.possession === false){
+        player1.possession = true;
+    }
+}
+
+possessionSetter();
 
 //initial call to draw the field and create the players
 window.onload = () => {
@@ -203,22 +172,76 @@ let drawField = () => {
 
     executeMoves();
 
+    gameStructure();
 
-    drawPlayer2(player2);
-    drawPlayer1(player1);
+    p1Tackle();
+    p2Tackle();
+
+    drawPlayers(player1, player2, icons[0]);
 
     window.requestAnimationFrame(drawField)
 }
 
 
 
-let drawPlayer1 = (player) => {
-    fieldContext.drawImage(player.playerImage, p1X - playerPosXEQ(player), p1Y - playerPosYEQ(player));
+let drawPlayers = (playerA, playerB, football) => {
+    if(playerA.possession === true){
+        fieldContext.drawImage(playerA.playerImage, playerA.X - playerA.xEQ, playerA.Y - playerA.yEQ);
+        fieldContext.drawImage(football.image, playerA.X - football.xEQ, playerA.Y - football.yEQ);
+        fieldContext.drawImage(playerB.playerImage, playerB.X - playerB.xEQ, playerB.Y - playerB.yEQ);
+        //testing eq
+        // fieldContext.drawImage(football.image, playerB.X - football.xEQ, playerB.Y - football.yEQ);
+    }
+    if(playerB.possession === true){
+        fieldContext.drawImage(playerB.playerImage, playerB.X - playerB.xEQ, playerB.Y - playerB.yEQ);
+        fieldContext.drawImage(football.image, playerB.X - football.xEQ, playerB.Y - football.yEQ);
+        fieldContext.drawImage(playerA.playerImage, playerA.X - playerA.xEQ, playerA.Y - playerA.yEQ);
+    }
 }
 
-let drawPlayer2 = (player) => {
-    fieldContext.drawImage(player.playerImage, p2X - playerPosXEQ(player), p2Y - playerPosYEQ(player));
+const gameStructure = () => {
+    if(player1.X == null && player2.X == null && player2.Y == null && player2.Y == null || down === 1){
+        player1.X = 200;
+        player1.Y = 500;
+        player2.X = 600;
+        player2.Y = 500;
+    }
+
+
 }
+
+
+
+const p1Tackle = () => {
+
+    if (!player1.possession && player2.X >= player1.X - player1.tacklingArea && player2.X <= player1.X + player1.tacklingArea && player2.Y >= player1.Y - player1.tacklingArea && player2.Y <= player1.Y + player1.tacklingArea) {
+        console.log("p1 tackle")
+    }
+}
+
+const p2Tackle = () => {
+
+    if(!player2.possession && player1.X >= player2.X-player2.tacklingArea  && player1.X <= player2.X+player2.tacklingArea  && player1.Y >= player2.Y-player2.tacklingArea  && player1.Y <= player2.Y+player2.tacklingArea){
+        console.log("p2 tackle")
+    }
+}
+
+// const playerStart = (player) => {
+//     if(player.possession === true){
+//         player.X = 200;
+//         player.Y = 500;
+//     }   else if(player.possession === false){
+//         player.X = 400;
+//         player.Y = 500;
+//     }
+// }
+
+// fieldContext.drawImage(footballIcon, player.X - playerPosXEQ(player), p1Y - playerPosYEQ(player));
+// let drawPlayer2 = (player) => {
+//     fieldContext.drawImage(player.playerImage, player2.X - playerPosXEQ(player), p2Y - playerPosYEQ(player));
+//     fieldContext.drawImage(footballIcon, p2X, p2Y);
+//
+// }
 
 
 // let p2YEQ = p2Y - playerPosYEQ(player2);
@@ -319,3 +342,60 @@ let drawPlayer2 = (player) => {
 //
 // let p1Keys = { left: 37, up: 38, right: 39, down: 40 };
 // let p2Keys = { left: 150, up: 119, right: 100, down: 115 };
+//
+// let keys = [];
+//
+// // let movementY = (speed) => {
+// //     $( document).keydown((e) => {
+// //         keys[e.which] = true;
+// //         console.log("p2Y: " + (p2Y));
+// //         console.log("p2X: " + (p2X));
+// //         console.log("p1Y: " + (p1Y));
+// //         console.log("p1X: " + (p1X));
+// //         if((p2Y === p1Y) && (p1X === p2X)){
+// //             console.log("tackle");
+// //         }
+// //         // console.log(keys.length);
+// //         //up
+// //         if(e.keyCode == 87){
+// //             p2Y-=speed;
+// //             console.log(speed);
+// //         }
+// //         //down
+// //         if(e.keyCode == 83){
+// //             console.log(speed);
+// //             p2Y+=speed;
+// //         }
+// //         //right
+// //         if(e.keyCode == 65){
+// //             console.log(speed);
+// //             p2X-=speed;
+// //         }
+// //         // left
+// //         if(e.keyCode == 68){
+// //             console.log(speed);
+// //             p2X+=speed;
+// //         }
+// //
+// //         //up
+// //         if(e.keyCode == 38){
+// //             p1Y-=speed;
+// //             console.log(speed);
+// //         }
+// //         //down
+// //         if(e.keyCode == 40){
+// //             console.log(speed);
+// //             p1Y+=speed;
+// //         }
+// //         //right
+// //         if(e.keyCode == 37){
+// //             console.log(speed);
+// //             p1X-=speed;
+// //         }
+// //         // left
+// //         if(e.keyCode == 39){
+// //             console.log(speed);
+// //             p1X+=speed;
+// //         }
+// //     })
+// // }

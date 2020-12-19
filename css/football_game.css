@@ -36,8 +36,9 @@ canvas{
     justify-content: center;
 }
 
-.player-img{
+.player-img, #football-icon{
     display: none;
 }
+
 
 
