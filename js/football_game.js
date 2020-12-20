@@ -30,7 +30,8 @@ let players = [
         yEQ: ($("#joe-image").get(0).height/2),
         tacklingArea: 15,
         speed: 5,
-        agility: 5
+        agility: 5,
+        score: 0
     },
     {
         name: "Dak",
@@ -42,19 +43,16 @@ let players = [
         yEQ: ($("#dak-image").get(0).height/2)-18,
         tacklingArea: 10,
         speed: 5,
-        agility: 5
+        agility: 5,
+        score: 0
     }
 ]
 
-let playerPosXEQ = (player) => {
-    return player.playerImage.width/2;
-}
 
-let playerPosYEQ = (player) => {
-    return player.playerImage.height/2;
-}
 
 let down;
+let half;
+let locked = false;
 
 
 // const incrementPos = (speed) => {
@@ -92,8 +90,6 @@ const controller = {
         }}
 }
 
-
-
 document.addEventListener("keydown", (e) => {
     if(controller[e.keyCode]){
         controller[e.keyCode].pressed = true
@@ -106,11 +102,17 @@ document.addEventListener("keyup", (e) => {
     }
 })
 
+
 const executeMoves = () => {
-    Object.keys(controller).forEach(key=> {
-        controller[key].pressed && controller[key].func()
-    })
+    if(locked === false){
+        Object.keys(controller).forEach(key=> {
+            controller[key].pressed && controller[key].func()
+        })
+    }
+
 }
+
+
 
 // let keyControl = () => {
 //     $(document).keyup((e) => {
@@ -128,9 +130,17 @@ let fieldContext;
 let player1 = players[0];
 let player2 = players[1];
 
-let possessionSetter = () => {
+let possessionSetter = (half) => {
+
     if(player1.possession === false && player2.possession === false){
-        player1.possession = true;
+        if(half === 1){
+            player1.possession = true;
+        }   if(half === 2){
+            player2.possession = true;
+        }   else{
+            player1.possession = true;
+        }
+
     }
 }
 
@@ -141,15 +151,19 @@ window.onload = () => {
     console.log("hello from football game");
     footballField = $("#football-field").get(0);
     fieldContext = footballField.getContext("2d");
-    // movementX(3);
-    // movementY(10);
-    // keyControl();
-
     window.requestAnimationFrame(drawField);
     $("#p1-name").text(player1.name);
     $("#p2-name").text(player2.name);
+    $("#p1-score").text(player1.score)
+    $("#p2-score").text(player2.score)
 }
 
+const scoreboard = () => {
+    $("#p1-name").text(player1.name);
+    $("#p2-name").text(player2.name);
+    $("#p1-score").text(player1.score)
+    $("#p2-score").text(player2.score)
+}
 
 
 let drawField = () => {
@@ -170,12 +184,17 @@ let drawField = () => {
     // fieldContext.fillStyle = "white"
     // fieldContext.fillRect(footballField.width/2,0,5, footballField.height)
 
+
+
     executeMoves();
 
     gameStructure();
 
     p1Tackle();
     p2Tackle();
+    touchdown();
+
+    scoreboard();
 
     drawPlayers(player1, player2, icons[0]);
 
@@ -199,18 +218,29 @@ let drawPlayers = (playerA, playerB, football) => {
     }
 }
 
+const newSetOfDowns = () => {
+    down = 1;
+    if (player1.possession) {
+        player1.X = 250;
+        player1.Y = (footballField.height / 2);
+        player2.X = player1.X + 250;
+        player2.Y = (footballField.height / 2);
+    }
+    if (player2.possession) {
+        player2.X = footballField.width - 250;
+        player2.Y = (footballField.height / 2);
+        player1.X = player2.X - 250;
+        player1.Y = (footballField.height / 2);
+    }
+}
+
 const gameStructure = () => {
-    if(player1.X == null && player2.X == null && player2.Y == null && player2.Y == null || down === 1){
-        player1.X = 200;
-        player1.Y = 500;
-        player2.X = 600;
-        player2.Y = 500;
+    if(player1.X == null && player2.X == null && player2.Y == null && player2.Y == null){
+        newSetOfDowns();
     }
 
 
 }
-
-
 
 const p1Tackle = () => {
 
@@ -223,8 +253,76 @@ const p2Tackle = () => {
 
     if(!player2.possession && player1.X >= player2.X-player2.tacklingArea  && player1.X <= player2.X+player2.tacklingArea  && player1.Y >= player2.Y-player2.tacklingArea  && player1.Y <= player2.Y+player2.tacklingArea){
         console.log("p2 tackle")
+        player1.Y = footballField.height/2;
+        player2.Y = footballField.height/2;
+        player2.X = player1.X + 250
     }
 }
+
+// console.log(footballField.length - 150);
+
+// const p1Touchdown = () => {
+//
+// }
+
+
+
+const touchdown = () => {
+    if(player2.possession && player2.X < 150){
+        console.log("p2 touchdown");
+        player2.score+=7;
+        player2.possession = false;
+        player1.possession = true;
+        locked = true;
+        newSetOfDowns();
+        downSetHut()
+
+
+
+        setTimeout(function(){
+            locked = false;
+        }, 3000)
+    }
+    if(player1.possession && player1.X > 1250){
+        console.log("p1 touchdown");
+        player1.score+=7;
+        player1.possession = false;
+        player2.possession = true;
+        locked = true;
+        newSetOfDowns()
+        downSetHut()
+
+    }
+}
+
+const downSetHut = () => {
+   $("#instruction").text("Press spacebar to play the next down")
+   $(window).keydown(function(event){
+        if(event.which == "32"){
+            setTimeout(function(){
+                $("#instruction").text("Down...")
+            }, 0);
+            setTimeout(function(){
+                $("#instruction").text("Set...")
+            }, 1000);
+            setTimeout(function(){
+                $("#instruction").text("Hut!")
+                locked = false;
+            }, 2000);
+            setTimeout(function(){
+                $("#instruction").text("")
+            }, 3000);
+            $(window).off()
+        }
+    })
+
+}
+
+
+
+
+
+
 
 // const playerStart = (player) => {
 //     if(player.possession === true){
@@ -399,3 +497,11 @@ const p2Tackle = () => {
 // //         }
 // //     })
 // // }
+
+// let playerPosXEQ = (player) => {
+//     return player.playerImage.width/2;
+// }
+//
+// let playerPosYEQ = (player) => {
+//     return player.playerImage.height/2;
+// }
