@@ -45,7 +45,202 @@ let players = [
         speed: 5,
         agility: 5,
         score: 0
-    }
+    },
+    {
+        name: "RaRa",
+        playerImage: $("#rara-image").get(0),
+        possession: false,
+        X: null,
+        Y: null,
+        xEQ: ($("#rara-image").get(0).width/2)-5,
+        yEQ: ($("#rara-image").get(0).height/2)+5,
+        tacklingArea: 15,
+        speed: 5,
+        agility: 5,
+        score: 0
+    },
+    {
+        name: "Linsay",
+        playerImage: $("#linsay-image").get(0),
+        possession: false,
+        X: null,
+        Y: null,
+        xEQ: ($("#linsay-image").get(0).width/2)+7,
+        yEQ: ($("#linsay-image").get(0).height/2)-25,
+        tacklingArea: 15,
+        speed: 5,
+        agility: 5,
+        score: 0
+    },
+    {
+        name: "Chad",
+        playerImage: $("#chad-image").get(0),
+        possession: false,
+        X: null,
+        Y: null,
+        xEQ: ($("#chad-image").get(0).width/2)-7,
+        yEQ: ($("#chad-image").get(0).height/2),
+        tacklingArea: 15,
+        speed: 5,
+        agility: 5,
+        score: 0
+    },
+    {
+        name: "Hannah",
+        playerImage: $("#hannah-image").get(0),
+        possession: false,
+        X: null,
+        Y: null,
+        xEQ: ($("#hannah-image").get(0).width/2)+2,
+        yEQ: ($("#hannah-image").get(0).height/2)-40,
+        tacklingArea: 15,
+        speed: 5,
+        agility: 5,
+        score: 0
+    },
+    {
+        name: "Matt",
+        playerImage: $("#matt-image").get(0),
+        possession: false,
+        X: null,
+        Y: null,
+        xEQ: ($("#matt-image").get(0).width/2),
+        yEQ: ($("#matt-image").get(0).height/2)-25,
+        tacklingArea: 15,
+        speed: 5,
+        agility: 5,
+        score: 0
+    },
+    {
+        name: "Cade",
+        playerImage: $("#cade-image").get(0),
+        possession: false,
+        X: null,
+        Y: null,
+        xEQ: ($("#cade-image").get(0).width/2)-5,
+        yEQ: ($("#cade-image").get(0).height/2)-15,
+        tacklingArea: 15,
+        speed: 5,
+        agility: 5,
+        score: 0
+    },
+    {
+        name: "Cole",
+        playerImage: $("#cole-image").get(0),
+        possession: false,
+        X: null,
+        Y: null,
+        xEQ: ($("#cole-image").get(0).width/2),
+        yEQ: ($("#cole-image").get(0).height/2)-15,
+        tacklingArea: 15,
+        speed: 5,
+        agility: 5,
+        score: 0
+    },
+    {
+        name: "Pop",
+        playerImage: $("#pop-image").get(0),
+        possession: false,
+        X: null,
+        Y: null,
+        xEQ: ($("#pop-image").get(0).width/2),
+        yEQ: ($("#pop-image").get(0).height/2)-55,
+        tacklingArea: 15,
+        speed: 5,
+        agility: 5,
+        score: 0
+    },
+    {
+        name: "Jill",
+        playerImage: $("#jill-image").get(0),
+        possession: false,
+        X: null,
+        Y: null,
+        xEQ: ($("#jill-image").get(0).width/2)-5,
+        yEQ: ($("#jill-image").get(0).height/2),
+        tacklingArea: 15,
+        speed: 5,
+        agility: 5,
+        score: 0
+    },
+    {
+        name: "Pierson",
+        playerImage: $("#pierson-image").get(0),
+        possession: false,
+        X: null,
+        Y: null,
+        xEQ: ($("#pierson-image").get(0).width/2)-9,
+        yEQ: ($("#pierson-image").get(0).height/2)-15,
+        tacklingArea: 15,
+        speed: 5,
+        agility: 5,
+        score: 0
+    },
+    {
+        name: "Lexie",
+        playerImage: $("#lexie-image").get(0),
+        possession: false,
+        X: null,
+        Y: null,
+        xEQ: ($("#lexie-image").get(0).width/2)-8,
+        yEQ: ($("#lexie-image").get(0).height/2)-5,
+        tacklingArea: 15,
+        speed: 5,
+        agility: 5,
+        score: 0
+    },
+    {
+        name: "Dixie",
+        playerImage: $("#dixie-image").get(0),
+        possession: false,
+        X: null,
+        Y: null,
+        xEQ: ($("#dixie-image").get(0).width/2)-5,
+        yEQ: ($("#dixie-image").get(0).height/2)-15,
+        tacklingArea: 15,
+        speed: 5,
+        agility: 5,
+        score: 0
+    },
+    {
+        name: "Bailey",
+        playerImage: $("#bailey-image").get(0),
+        possession: false,
+        X: null,
+        Y: null,
+        xEQ: ($("#bailey-image").get(0).width/2)+22,
+        yEQ: ($("#bailey-image").get(0).height/2)+21,
+        tacklingArea: 15,
+        speed: 5,
+        agility: 5,
+        score: 0
+    },
+    {
+        name: "Mema",
+        playerImage: $("#mema-image").get(0),
+        possession: false,
+        X: null,
+        Y: null,
+        xEQ: ($("#mema-image").get(0).width/2)-5,
+        yEQ: ($("#mema-image").get(0).height/2)-20,
+        tacklingArea: 15,
+        speed: 5,
+        agility: 5,
+        score: 0
+    },
+    {
+        name: "Granny",
+        playerImage: $("#granny-image").get(0),
+        possession: false,
+        X: null,
+        Y: null,
+        xEQ: ($("#granny-image").get(0).width/2)-10,
+        yEQ: ($("#granny-image").get(0).height/2)-7,
+        tacklingArea: 15,
+        speed: 5,
+        agility: 5,
+        score: 0
+    },
 ]
 
 
@@ -112,7 +307,8 @@ const executeMoves = () => {
 
 }
 
-
+let player1 = players[0];
+let player2 = players[16];
 
 // let keyControl = () => {
 //     $(document).keyup((e) => {
@@ -127,8 +323,7 @@ let fieldContext;
 
 // movement(1);
 //note: changing player order determines which player renders on top of other
-let player1 = players[0];
-let player2 = players[1];
+
 
 let possessionSetter = (half) => {
 
@@ -196,7 +391,7 @@ let drawField = () => {
 
     scoreboard();
 
-    drawPlayers(player1, player2, icons[0]);
+    drawPlayers(player1, player2, icons[1]);
 
     window.requestAnimationFrame(drawField)
 }
@@ -209,7 +404,7 @@ let drawPlayers = (playerA, playerB, football) => {
         fieldContext.drawImage(football.image, playerA.X - football.xEQ, playerA.Y - football.yEQ);
         fieldContext.drawImage(playerB.playerImage, playerB.X - playerB.xEQ, playerB.Y - playerB.yEQ);
         //testing eq
-        // fieldContext.drawImage(football.image, playerB.X - football.xEQ, playerB.Y - football.yEQ);
+        fieldContext.drawImage(football.image, playerB.X - football.xEQ, playerB.Y - football.yEQ);
     }
     if(playerB.possession === true){
         fieldContext.drawImage(playerB.playerImage, playerB.X - playerB.xEQ, playerB.Y - playerB.yEQ);
