@@ -1,9 +1,5 @@
 "use strict";
 
-// $("h1").click((event) => {
-//     $(event.currentTarget).css("color", "orange");
-// });
-
 //players object
 
 let icons = [
@@ -31,7 +27,8 @@ let players = [
         tacklingArea: 15,
         speed: 5,
         agility: 5,
-        score: 0
+        score: 0,
+        timeouts: 2
     },
     {
         name: "Dak",
@@ -44,7 +41,8 @@ let players = [
         tacklingArea: 10,
         speed: 5,
         agility: 5,
-        score: 0
+        score: 0,
+        timeouts: 2
     },
     {
         name: "RaRa",
@@ -57,7 +55,8 @@ let players = [
         tacklingArea: 15,
         speed: 5,
         agility: 5,
-        score: 0
+        score: 0,
+        timeouts: 2
     },
     {
         name: "Linsay",
@@ -70,7 +69,8 @@ let players = [
         tacklingArea: 15,
         speed: 5,
         agility: 5,
-        score: 0
+        score: 0,
+        timeouts: 2
     },
     {
         name: "Chad",
@@ -83,7 +83,8 @@ let players = [
         tacklingArea: 15,
         speed: 5,
         agility: 5,
-        score: 0
+        score: 0,
+        timeouts: 2
     },
     {
         name: "Hannah",
@@ -96,7 +97,8 @@ let players = [
         tacklingArea: 15,
         speed: 5,
         agility: 5,
-        score: 0
+        score: 0,
+        timeouts: 2
     },
     {
         name: "Matt",
@@ -109,7 +111,8 @@ let players = [
         tacklingArea: 15,
         speed: 5,
         agility: 5,
-        score: 0
+        score: 0,
+        timeouts: 2
     },
     {
         name: "Cade",
@@ -122,7 +125,8 @@ let players = [
         tacklingArea: 15,
         speed: 5,
         agility: 5,
-        score: 0
+        score: 0,
+        timeouts: 2
     },
     {
         name: "Cole",
@@ -135,7 +139,8 @@ let players = [
         tacklingArea: 15,
         speed: 5,
         agility: 5,
-        score: 0
+        score: 0,
+        timeouts: 2
     },
     {
         name: "Pop",
@@ -148,7 +153,8 @@ let players = [
         tacklingArea: 15,
         speed: 5,
         agility: 5,
-        score: 0
+        score: 0,
+        timeouts: 2
     },
     {
         name: "Jill",
@@ -161,7 +167,8 @@ let players = [
         tacklingArea: 15,
         speed: 5,
         agility: 5,
-        score: 0
+        score: 0,
+        timeouts: 2
     },
     {
         name: "Pierson",
@@ -174,7 +181,8 @@ let players = [
         tacklingArea: 15,
         speed: 5,
         agility: 5,
-        score: 0
+        score: 0,
+        timeouts: 2
     },
     {
         name: "Lexie",
@@ -187,7 +195,8 @@ let players = [
         tacklingArea: 15,
         speed: 5,
         agility: 5,
-        score: 0
+        score: 0,
+        timeouts: 2
     },
     {
         name: "Dixie",
@@ -200,7 +209,8 @@ let players = [
         tacklingArea: 15,
         speed: 5,
         agility: 5,
-        score: 0
+        score: 0,
+        timeouts: 2
     },
     {
         name: "Bailey",
@@ -213,7 +223,8 @@ let players = [
         tacklingArea: 15,
         speed: 5,
         agility: 5,
-        score: 0
+        score: 0,
+        timeouts: 2
     },
     {
         name: "Mema",
@@ -226,7 +237,8 @@ let players = [
         tacklingArea: 15,
         speed: 5,
         agility: 5,
-        score: 0
+        score: 0,
+        timeouts: 2
     },
     {
         name: "Granny",
@@ -239,15 +251,76 @@ let players = [
         tacklingArea: 15,
         speed: 5,
         agility: 5,
-        score: 0
+        score: 0,
+        timeouts: 2
     },
 ]
 
+let player1 = players[0];
+let player2 = players[6];
 
-
+// let pause = false;
 let down;
-let half;
+let halfStart = true;
+let half = 0;
 let locked = false;
+let paused = false;
+
+const interpretDown = () => {
+
+    if(player1.possession){
+        $("#p2-down").css("display", "none");
+        $("#p1-down").css("display", "inline");
+
+        // $("#p2-down").innerHTML();
+        if(down === 1){
+            $("#p1-down").text("1st Down");
+        }   if(down === 2){
+            $("#p1-down").text("2nd Down");
+        }   if(down === 3){
+            $("#p1-down").text("3rd Down");
+        }   if(down === 4){
+            $("#p1-down").text("4th Down");
+        }   if(down === 5){
+            console.log(player1.possession)
+            player1.possession = false;
+            player2.possession = true;
+
+            setTimeout(function(){
+                $("#p1-down").text("Turnover on downs!");
+            }, 2000)
+            newSetOfDowns();
+        }
+    }
+
+    if(player2.possession){
+        $("#p1-down").css("display", "none");
+        $("#p2-down").css("display", "inline");
+
+        // $("#p1-down").innerHTML();
+        if(down === 1){
+            $("#p2-down").text("1st Down");
+        }   if(down === 2){
+            $("#p2-down").text("2nd Down");
+        }   if(down === 3){
+            $("#p2-down").text("3rd Down");
+        }   if(down === 4){
+            $("#p2-down").text("4th Down");
+        }   if(down === 5){
+            console.log(player1.possession)
+            player1.possession = true;
+            player2.possession = false;
+            $("#p2-down").text("Turnover on downs!");
+            setTimeout(function(){
+                $("#down").text("1st Down");
+            }, 2000)
+            newSetOfDowns();
+        }
+    }
+
+
+}
+
 
 
 // const incrementPos = (speed) => {
@@ -307,8 +380,7 @@ const executeMoves = () => {
 
 }
 
-let player1 = players[0];
-let player2 = players[16];
+
 
 // let keyControl = () => {
 //     $(document).keyup((e) => {
@@ -383,15 +455,17 @@ let drawField = () => {
 
     executeMoves();
 
-    gameStructure();
+    startGame();
 
     p1Tackle();
     p2Tackle();
     touchdown();
 
+    interpretDown();
+
     scoreboard();
 
-    drawPlayers(player1, player2, icons[1]);
+    drawPlayers(player1, player2, icons[0]);
 
     window.requestAnimationFrame(drawField)
 }
@@ -404,7 +478,7 @@ let drawPlayers = (playerA, playerB, football) => {
         fieldContext.drawImage(football.image, playerA.X - football.xEQ, playerA.Y - football.yEQ);
         fieldContext.drawImage(playerB.playerImage, playerB.X - playerB.xEQ, playerB.Y - playerB.yEQ);
         //testing eq
-        fieldContext.drawImage(football.image, playerB.X - football.xEQ, playerB.Y - football.yEQ);
+        // fieldContext.drawImage(football.image, playerB.X - football.xEQ, playerB.Y - football.yEQ);
     }
     if(playerB.possession === true){
         fieldContext.drawImage(playerB.playerImage, playerB.X - playerB.xEQ, playerB.Y - playerB.yEQ);
@@ -429,9 +503,10 @@ const newSetOfDowns = () => {
     }
 }
 
-const gameStructure = () => {
+const startGame = () => {
     if(player1.X == null && player2.X == null && player2.Y == null && player2.Y == null){
         newSetOfDowns();
+        downSetHut()
     }
 
 
@@ -441,6 +516,11 @@ const p1Tackle = () => {
 
     if (!player1.possession && player2.X >= player1.X - player1.tacklingArea && player2.X <= player1.X + player1.tacklingArea && player2.Y >= player1.Y - player1.tacklingArea && player2.Y <= player1.Y + player1.tacklingArea) {
         console.log("p1 tackle")
+        down++;
+        player2.Y = footballField.height/2;
+        player1.Y = footballField.height/2;
+        player1.X = player2.X -250
+        downSetHut();
     }
 }
 
@@ -448,9 +528,11 @@ const p2Tackle = () => {
 
     if(!player2.possession && player1.X >= player2.X-player2.tacklingArea  && player1.X <= player2.X+player2.tacklingArea  && player1.Y >= player2.Y-player2.tacklingArea  && player1.Y <= player2.Y+player2.tacklingArea){
         console.log("p2 tackle")
+        down++;
         player1.Y = footballField.height/2;
         player2.Y = footballField.height/2;
         player2.X = player1.X + 250
+        downSetHut();
     }
 }
 
@@ -468,32 +550,30 @@ const touchdown = () => {
         player2.score+=7;
         player2.possession = false;
         player1.possession = true;
-        locked = true;
         newSetOfDowns();
         downSetHut()
-
-
-
-        setTimeout(function(){
-            locked = false;
-        }, 3000)
     }
     if(player1.possession && player1.X > 1250){
         console.log("p1 touchdown");
         player1.score+=7;
         player1.possession = false;
         player2.possession = true;
-        locked = true;
         newSetOfDowns()
         downSetHut()
-
     }
 }
 
 const downSetHut = () => {
+    locked = true;
    $("#instruction").text("Press spacebar to play the next down")
    $(window).keydown(function(event){
         if(event.which == "32"){
+            if(halfStart === true){
+                half++;
+                halfStart = false;
+                $('#clock').html("2:00");
+                countdown();
+            }
             setTimeout(function(){
                 $("#instruction").text("Down...")
             }, 0);
@@ -503,17 +583,67 @@ const downSetHut = () => {
             setTimeout(function(){
                 $("#instruction").text("Hut!")
                 locked = false;
+                paused = false;
             }, 2000);
-            setTimeout(function(){
-                $("#instruction").text("")
-            }, 3000);
             $(window).off()
+            $("#instruction").text();
         }
     })
 
 }
 
+// let timer = 60;
+// function onTimer() {
+//     $("#clock").text(timer)
+//     timer--;
+//     if (timer < 0) {
+//         alert('end of half');
+//     }
+//     else {
+//         setTimeout(onTimer, 1000);
+//     }
+// }
 
+let interval;
+
+function countdown() {
+
+    clearInterval(interval);
+    interval = setInterval( function() {
+        var timer = $("#clock").html();
+        timer = timer.split(':');
+        var minutes = timer[0];
+        var seconds = timer[1];
+        if(paused === false){
+            seconds -= 1;
+        }
+        if (minutes < 0) return;
+        else if (seconds < 0 && minutes != 0) {
+            minutes -= 1;
+            seconds = 59;
+        }
+        else if (seconds < 10 && length.seconds != 2) seconds = '0' + seconds;
+
+        $("#clock").html(minutes + ':' + seconds);
+
+        if (minutes == 0 && seconds == 0){
+            clearInterval(interval);
+            locked = true;
+            halfStart = true;
+            console.log(half);
+            player1.X = null;
+            player2.X = null;
+            player1.Y = null;
+            player2.Y = null;
+        }
+    }, 1000);
+
+
+}
+
+$('#pause-clock').click(function () {
+    paused = true;
+});
 
 
 
