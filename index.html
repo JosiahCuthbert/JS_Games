@@ -57,8 +57,9 @@
         </div>
     </div>
 
-    <div id="loading-screen">
-
+    <div id="landing-screen">
+        <h1>Football</h1>
+        <button id="new-game">Play</button>
     </div>
 
     <div id="player-selection-window">
@@ -67,8 +68,8 @@
         <div id="player-selection">
 
             <div id="p1-card" class="card chosen-player">
-                <h4>name</h4>
-                <h4>image</h4>
+                <h4 class="chosen-name">name</h4>
+                <h4  class="chosen-image">image </h4>
                 <div id="p1-stats" class="stats">
                     <h4 class="speed">Speed</h4>
                     <h4 class="agility">Agility</h4>
@@ -78,65 +79,66 @@
                     <h4 class="stamina">Stamina</h4>
                 </div>
                 <h4>bio</h4>
+                <button class="select-player">Choose Player</button>
+
             </div>
 
             <div id="player-images" class="row">
                 <div class="player-card card col-sm-2">
-                    <img src="img/joe-cropped.png" class="player-img" id="joe-image" width="151" height="200">
+                    <img src="img/joe-cropped.png" class="player-img" id="joe-image" width="151" height="200" data-name="Joe">
                 </div>
                 <div class="player-card card col-sm-2">
-                    <img src="img/dak-cropped.png" class="player-img" id="dak-image" width="133" height="125">
+                    <img src="img/dak-cropped.png" class="player-img" id="dak-image" width="133" height="125" data-name="Dak">
                 </div>
                 <div class="player-card card col-sm-2">
-                    <img src="img/rara-cropped.png" class="player-img" id="rara-image" width="135" height="180">
+                    <img src="img/rara-cropped.png" class="player-img" id="rara-image" width="135" height="180" data-name="RaRa">
                 </div>
                 <div class="player-card card col-sm-2">
-                    <img src="img/linsay-cropped.png" class="player-img" id="linsay-image" width="156" height="150">
+                    <img src="img/linsay-cropped.png" class="player-img" id="linsay-image" width="156" height="150" data-name="Linsay">
                 </div>
                 <div class="player-card card col-sm-2">
-                    <img src="img/hannah-cropped.png" class="player-img" id="hannah-image" width="156" height="143">
+                    <img src="img/hannah-cropped.png" class="player-img" id="hannah-image" width="156" height="143" data-name="Hannah">
                 </div>
                 <div class="player-card card col-sm-2">
-                    <img src="img/matt-cropped.png" class="player-img" id="matt-image" width="123" height="220">
+                    <img src="img/matt-cropped.png" class="player-img" id="matt-image" width="123" height="220" data-name="Matt">
                 </div>
                 <div class="player-card card col-sm-2">
-                    <img src="img/chad-cropped.png" class="player-img" id="chad-image" width="113" height="150">
+                    <img src="img/chad-cropped.png" class="player-img" id="chad-image" width="113" height="150" data-name="Chad">
                 </div>
                 <div class="player-card card col-sm-2">
-                    <img src="img/cade-cropped.png" class="player-img" id="cade-image" width="101" height="180">
+                    <img src="img/cade-cropped.png" class="player-img" id="cade-image" width="101" height="180" data-name="Cade">
                 </div>
                 <div class="player-card card col-sm-2">
-                    <img src="img/cole-cropped.png" class="player-img" id="cole-image" width="101" height="180">
+                    <img src="img/cole-cropped.png" class="player-img" id="cole-image" width="101" height="180" data-name="Cole">
                 </div>
                 <div class="player-card card col-sm-2">
-                    <img src="img/pop-cropped.png" class="player-img" id="pop-image" width="160" height="142">
+                    <img src="img/pop-cropped.png" class="player-img" id="pop-image" width="160" height="142" data-name="Pop">
                 </div>
                 <div class="player-card card col-sm-2">
-                    <img src="img/jill-cropped.png" class="player-img" id="jill-image" width="113" height="160">
+                    <img src="img/jill-cropped.png" class="player-img" id="jill-image" width="113" height="160" data-name="Jill">
                 </div>
                 <div class="player-card card col-sm-2">
-                    <img src="img/lexie-cropped.png" class="player-img" id="lexie-image" width="123" height="155">
+                    <img src="img/lexie-cropped.png" class="player-img" id="lexie-image" width="123" height="155" data-name="Lexie">
                 </div>
                 <div class="player-card card col-sm-2">
-                    <img src="img/pierson-cropped.png" class="player-img" id="pierson-image" width="150" height="200">
+                    <img src="img/pierson-cropped.png" class="player-img" id="pierson-image" width="150" height="200" data-name="Pierson">
                 </div>
                 <div class="player-card card col-sm-2">
-                    <img src="img/mema-cropped.png" class="player-img" id="mema-image" width="167" height="230">
+                    <img src="img/mema-cropped.png" class="player-img" id="mema-image" width="167" height="230" data-name="Mema">
                 </div>
                 <div class="player-card card col-sm-2">
-                    <img src="img/granny-cropped.png" class="player-img" id="granny-image" width="128" height="138">
+                    <img src="img/granny-cropped.png" class="player-img" id="granny-image" width="128" height="138" data-name="Granny">
                 </div>
                 <div class="player-card card col-sm-2">
-                    <img src="img/bailey-cropped.png" class="player-img" id="bailey-image" width="196" height="153">
+                    <img src="img/bailey-cropped.png" class="player-img" id="bailey-image" width="196" height="153" data-name="Bailey">
                 </div>
                 <div class="player-card card col-sm-2">
-                    <img src="img/dixie-cropped.png" class="player-img" id="dixie-image" width="149" height="220">
+                    <img src="img/dixie-cropped.png" class="player-img" id="dixie-image" width="149" height="220" data-name="Dixie">
                 </div>
             </div>
 
             <div id="p2-card" class="card chosen-player">
-                <h4>name</h4>
-                <h4>image</h4>
+                <h4 class="chosen-name">name</h4>
                 <div id="p2-stats" class="stats">
                     <h4 class="speed">Speed</h4>
                     <h4 class="agility">Agility</h4>
@@ -146,8 +148,10 @@
                     <h4 class="stamina">Stamina</h4>
                 </div>
                 <h4>bio</h4>
+                <button class="select-player">Choose Player</button>
             </div>
         </div>
+        <button id="ready">Play</button>
     </div>
 
 

@@ -324,8 +324,16 @@ let players = [
     },
 ]
 
-let player1 = players[9];
-let player2 = players[14];
+let player1;
+let player2;
+let readyToChooseP1 = false;
+let readyToChooseP2 = false;
+let player1Chosen = false;
+let player2Chosen = false;
+
+
+// let player1 = players[0];
+// let player2 = players[8];
 
 // let pause = false;
 let down;
@@ -481,15 +489,11 @@ let possessionSetter = () => {
 
 
 //initial call to draw the field and create the players
-window.onload = () => {
+const game = () => {
     console.log("hello from football game");
     footballField = $("#football-field").get(0);
     fieldContext = footballField.getContext("2d");
     window.requestAnimationFrame(drawField);
-    $("#p1-name").text(player1.name);
-    $("#p2-name").text(player2.name);
-    $("#p1-score").text(player1.score)
-    $("#p2-score").text(player2.score)
 }
 
 const scoreboard = () => {
@@ -518,7 +522,7 @@ let drawField = () => {
     // fieldContext.fillStyle = "white"
     // fieldContext.fillRect(footballField.width/2,0,5, footballField.height)
 
-
+    // ready();
 
     executeMoves();
     possessionSetter();
@@ -717,12 +721,88 @@ $(".player-img").hover(function (){
     $(this).css("transform", "scale(1.2)");
 }, function(){
     $(this).css("transform", "scale(1)");
+})
+
+// players.forEach((player) => {
+//
+// })
+
+$(".player-img").click(function(){
+    // console.log($(this).data("name"));
+    if(player1Chosen === false){
+        for(let i = 0;i<players.length;i++){
+            if($(this).data("name") === players[i].name) {
+                $(this).parent().css("display", "none")
+                console.log(players[i]);
+                $("#p1-card .chosen-name").html(players[i].name)
+                // $("#p1-card, .chosen-image").src(players[i].playerImage)
+                $("#p1-stats .speed").html(players[i].speed)
+                $("#p1-stats .agility").html(players[i].agility)
+                $("#p1-stats .tackling").html(players[i].tacklingArea)
+                $("#p1-stats .offense").html(players[i].offense)
+                $("#p1-stats .defense").html(players[i].defense)
+                $("#p1-stats .stamina").html(players[i].stamina)
+                player1 = players[i];
+                // console.log(player1);
+
+                // readyToChooseP1 = true;
+                $("#p1-card .select-player").css("display", "inline");
+                break;
+            }
+        }
+    }
 
 })
 
 $(".player-img").click(function(){
+    // console.log($(this).data("name"));
+    if(player1Chosen === true){
+        for(let i = 0;i<players.length;i++){
+            if($(this).data("name") === players[i].name) {
+                $(this).parent().css("display", "none")
+                console.log(players[i]);
+                $("#p2-card .chosen-name").html(players[i].name)
+                // $("#p2-card, .chosen-image").src(players[i].playerImage)
+                $("#p2-stats .speed").html(players[i].speed)
+                $("#p2-stats .agility").html(players[i].agility)
+                $("#p2-stats .tackling").html(players[i].tacklingArea)
+                $("#p2-stats .offense").html(players[i].offense)
+                $("#p2-stats .defense").html(players[i].defense)
+                $("#p2-stats .stamina").html(players[i].stamina)
+                player2 = players[i];
+                // console.log(player1);
+
+                // readyToChooseP1 = true;
+                $("#p2-card .select-player").css("display", "inline");
+                break;
+            }
+        }
+    }
 
 })
+
+$("#p1-card .select-player").click(() => {
+    player1Chosen = true;
+});
+
+$("#p2-card .select-player").click(() => {
+    player2Chosen = true;
+    $("#ready").css("display", "inline");
+});
+
+$("#ready").click(() => {
+    $("#player-selection-window").css("display", "none");
+    $("#game-screen").css("display", "inline");
+    game();
+});
+
+
+$("#new-game").click(() => {
+    $("#landing-screen").css("display", "none");
+    $("#player-selection-window").css("display", "inline");
+
+})
+
 
 
 
