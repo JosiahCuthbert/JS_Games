@@ -17,6 +17,7 @@ let icons = [
 
 let players = [
     {
+        id: 1,
         name: "Joe",
         playerImage: $("#joe-image").get(0),
         possession: false,
@@ -28,23 +29,31 @@ let players = [
         speed: 5,
         agility: 5,
         score: 0,
-        timeouts: 2
+        timeouts: 2,
+        stamina: 5,
+        offense: 1.0,
+        defense: 1.0
     },
     {
+        id: 2,
         name: "Dak",
         playerImage: $("#dak-image").get(0),
         possession: false,
         X: null,
         Y: null,
         xEQ: ($("#dak-image").get(0).width/2),
-        yEQ: ($("#dak-image").get(0).height/2)-18,
+        yEQ: ($("#dak-image").get(0).height/2),
         tacklingArea: 10,
         speed: 5,
         agility: 5,
         score: 0,
-        timeouts: 2
+        timeouts: 2,
+        stamina: 5,
+        offense: 1.0,
+        defense: 1.0
     },
     {
+        id: 3,
         name: "RaRa",
         playerImage: $("#rara-image").get(0),
         possession: false,
@@ -56,23 +65,31 @@ let players = [
         speed: 5,
         agility: 5,
         score: 0,
-        timeouts: 2
+        timeouts: 2,
+        stamina: 5,
+        offense: 1.0,
+        defense: 1.0
     },
     {
+        id: 4,
         name: "Linsay",
         playerImage: $("#linsay-image").get(0),
         possession: false,
         X: null,
         Y: null,
-        xEQ: ($("#linsay-image").get(0).width/2)+7,
-        yEQ: ($("#linsay-image").get(0).height/2)-25,
+        xEQ: ($("#linsay-image").get(0).width/2),
+        yEQ: ($("#linsay-image").get(0).height/2),
         tacklingArea: 15,
         speed: 5,
         agility: 5,
         score: 0,
-        timeouts: 2
+        timeouts: 2,
+        stamina: 5,
+        offense: 1.0,
+        defense: 1.0
     },
     {
+        id: 5,
         name: "Chad",
         playerImage: $("#chad-image").get(0),
         possession: false,
@@ -84,23 +101,31 @@ let players = [
         speed: 5,
         agility: 5,
         score: 0,
-        timeouts: 2
+        timeouts: 2,
+        stamina: 5,
+        offense: 1.0,
+        defense: 1.0
     },
     {
+        id: 6,
         name: "Hannah",
         playerImage: $("#hannah-image").get(0),
         possession: false,
         X: null,
         Y: null,
-        xEQ: ($("#hannah-image").get(0).width/2)+2,
-        yEQ: ($("#hannah-image").get(0).height/2)-40,
+        xEQ: ($("#hannah-image").get(0).width/2),
+        yEQ: ($("#hannah-image").get(0).height/2)-4,
         tacklingArea: 15,
         speed: 5,
         agility: 5,
         score: 0,
-        timeouts: 2
+        timeouts: 2,
+        stamina: 5,
+        offense: 1.0,
+        defense: 1.0
     },
     {
+        id: 7,
         name: "Matt",
         playerImage: $("#matt-image").get(0),
         possession: false,
@@ -112,9 +137,13 @@ let players = [
         speed: 5,
         agility: 5,
         score: 0,
-        timeouts: 2
+        timeouts: 2,
+        stamina: 5,
+        offense: 1.0,
+        defense: 1.0
     },
     {
+        id: 8,
         name: "Cade",
         playerImage: $("#cade-image").get(0),
         possession: false,
@@ -126,9 +155,13 @@ let players = [
         speed: 5,
         agility: 5,
         score: 0,
-        timeouts: 2
+        timeouts: 2,
+        stamina: 5,
+        offense: 1.0,
+        defense: 1.0
     },
     {
+        id: 9,
         name: "Cole",
         playerImage: $("#cole-image").get(0),
         possession: false,
@@ -140,23 +173,31 @@ let players = [
         speed: 5,
         agility: 5,
         score: 0,
-        timeouts: 2
+        timeouts: 2,
+        stamina: 5,
+        offense: 1.0,
+        defense: 1.0
     },
     {
+        id: 10,
         name: "Pop",
         playerImage: $("#pop-image").get(0),
         possession: false,
         X: null,
         Y: null,
         xEQ: ($("#pop-image").get(0).width/2),
-        yEQ: ($("#pop-image").get(0).height/2)-55,
+        yEQ: ($("#pop-image").get(0).height/2),
         tacklingArea: 15,
         speed: 5,
         agility: 5,
         score: 0,
-        timeouts: 2
+        timeouts: 2,
+        stamina: 5,
+        offense: 1.0,
+        defense: 1.0
     },
     {
+        id: 11,
         name: "Jill",
         playerImage: $("#jill-image").get(0),
         possession: false,
@@ -168,9 +209,13 @@ let players = [
         speed: 5,
         agility: 5,
         score: 0,
-        timeouts: 2
+        timeouts: 2,
+        stamina: 5,
+        offense: 1.0,
+        defense: 1.0
     },
     {
+        id: 12,
         name: "Pierson",
         playerImage: $("#pierson-image").get(0),
         possession: false,
@@ -182,9 +227,13 @@ let players = [
         speed: 5,
         agility: 5,
         score: 0,
-        timeouts: 2
+        timeouts: 2,
+        stamina: 5,
+        offense: 1.0,
+        defense: 1.0
     },
     {
+        id: 13,
         name: "Lexie",
         playerImage: $("#lexie-image").get(0),
         possession: false,
@@ -196,9 +245,13 @@ let players = [
         speed: 5,
         agility: 5,
         score: 0,
-        timeouts: 2
+        timeouts: 2,
+        stamina: 5,
+        offense: 1.0,
+        defense: 1.0
     },
     {
+        id: 14,
         name: "Dixie",
         playerImage: $("#dixie-image").get(0),
         possession: false,
@@ -210,23 +263,31 @@ let players = [
         speed: 5,
         agility: 5,
         score: 0,
-        timeouts: 2
+        timeouts: 2,
+        stamina: 5,
+        offense: 1.0,
+        defense: 1.0
     },
     {
+        id: 15,
         name: "Bailey",
         playerImage: $("#bailey-image").get(0),
         possession: false,
         X: null,
         Y: null,
-        xEQ: ($("#bailey-image").get(0).width/2)+22,
-        yEQ: ($("#bailey-image").get(0).height/2)+21,
+        xEQ: ($("#bailey-image").get(0).width/2)-5,
+        yEQ: ($("#bailey-image").get(0).height/2)-5,
         tacklingArea: 15,
         speed: 5,
         agility: 5,
         score: 0,
-        timeouts: 2
+        timeouts: 2,
+        stamina: 5,
+        offense: 1.0,
+        defense: 1.0
     },
     {
+        id: 16,
         name: "Mema",
         playerImage: $("#mema-image").get(0),
         possession: false,
@@ -238,26 +299,33 @@ let players = [
         speed: 5,
         agility: 5,
         score: 0,
-        timeouts: 2
+        timeouts: 2,
+        stamina: 5,
+        offense: 1.0,
+        defense: 1.0
     },
     {
+        id: 17,
         name: "Granny",
         playerImage: $("#granny-image").get(0),
         possession: false,
         X: null,
         Y: null,
-        xEQ: ($("#granny-image").get(0).width/2)-10,
-        yEQ: ($("#granny-image").get(0).height/2)-7,
+        xEQ: ($("#granny-image").get(0).width/2)-4,
+        yEQ: ($("#granny-image").get(0).height/2),
         tacklingArea: 15,
         speed: 5,
         agility: 5,
         score: 0,
-        timeouts: 2
+        timeouts: 2,
+        stamina: 5,
+        offense: 1.0,
+        defense: 1.0
     },
 ]
 
-let player1 = players[0];
-let player2 = players[6];
+let player1 = players[9];
+let player2 = players[14];
 
 // let pause = false;
 let down;
@@ -307,7 +375,6 @@ const interpretDown = () => {
         }   if(down === 4){
             $("#p2-down").text("4th Down");
         }   if(down === 5){
-            console.log(player1.possession)
             player1.possession = true;
             player2.possession = false;
             $("#p2-down").text("Turnover on downs!");
@@ -397,7 +464,7 @@ let fieldContext;
 //note: changing player order determines which player renders on top of other
 
 
-let possessionSetter = (half) => {
+let possessionSetter = () => {
 
     if(player1.possession === false && player2.possession === false){
         if(half === 1){
@@ -411,7 +478,7 @@ let possessionSetter = (half) => {
     }
 }
 
-possessionSetter();
+
 
 //initial call to draw the field and create the players
 window.onload = () => {
@@ -454,7 +521,7 @@ let drawField = () => {
 
 
     executeMoves();
-
+    possessionSetter();
     startGame();
 
     p1Tackle();
@@ -630,6 +697,7 @@ function countdown() {
             clearInterval(interval);
             locked = true;
             halfStart = true;
+            half++
             console.log(half);
             player1.X = null;
             player2.X = null;
@@ -644,6 +712,17 @@ function countdown() {
 $('#pause-clock').click(function () {
     paused = true;
 });
+
+$(".player-img").hover(function (){
+    $(this).css("transform", "scale(1.2)");
+}, function(){
+    $(this).css("transform", "scale(1)");
+
+})
+
+$(".player-img").click(function(){
+
+})
 
 
 

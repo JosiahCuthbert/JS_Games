@@ -36,9 +36,47 @@ canvas{
     justify-content: center;
 }
 
-.player-img, #football-icon{
+#football-icon, #test{
     display: none;
 }
+
+#loading-screen,
+/*#player-selection-window*/
+#game-screen
+{
+    display: none;
+}
+
+.player-card{
+    width: 200px;
+    height: 200px;
+    border: none;
+    display: flex;
+    /*justify-content: center;*/
+    /*align-content: center;*/
+    /*margin: auto;*/
+}
+
+#player-selection{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-right: 2em;
+    margin-left: 2em;
+}
+
+#player-images{
+    max-width: 1300px;
+}
+
+.player-img{
+    margin: auto;
+}
+
+.chosen-player{
+    min-width: 200px;
+}
+
 
 
 
