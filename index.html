@@ -11,6 +11,9 @@
 <body>
 <!--    <h1 id="test">Football</h1>-->
     <div id="game-screen">
+        <div id="clock-div">
+            <h3 id="clock">0:00</h3>
+        </div>
         <div id="canvas-div">
             <canvas id="football-field" width="1400px" height="650px">
                 <!--            <canvas class="endzone" id="p1-endzone" width="20px" height="100%"></canvas>-->
@@ -20,6 +23,7 @@
 
         <img src="img/football.png" id="football-icon" width="60" height="65">
         <img src="img/IMG_2526.JPG" id="test" class="player-img">
+        <img src="img/dallas-cowboys_416x416-removebg-preview.png" id="cowboys">
 
 
         <!--    <img src="img/linsay-cropped.png" class="player-img" id="linsay-image" width height>-->
@@ -27,48 +31,61 @@
         <!--    <img src="img/linsay-cropped.png" class="player-img" id="linsay-image" width height>-->
 
         <div id="scoreboard">
-            <div id="p1-scoreboard">
-                <div>
-                    <h3 id="p1-name" class="player-name"></h3>
-                    <h3 id="p1-score" class="player-score"></h3>
+            <div id="inner-scoreboard">
+                <div id="p1-scoreboard" class="player-score">
+                    <div>
+                        <h3 id="p1-name" class="player-name"></h3>
+                        <h3 id="p1-score" class="player-score"></h3>
+                    </div>
+
+
                 </div>
+
                 <div>
-                    <h3 class="down" id="p1-down"></h3>
+                    <h3 class="down"></h3>
+                </div>
+                <div id="p2-scoreboard" class="player-score">
+<!--                    <div>-->
+<!--                        <h3 class="down" id="p2-down"></h3>-->
+<!--                    </div>-->
+                    <div>
+                        <h3 id="p2-name" class="player-name"></h3>
+                        <h3 id="p2-score" class="player-score"></h3>
+                    </div>
+
                 </div>
 
             </div>
-            <div>
-                <h3 id="clock"></h3>
+
+
+
+            <div id="instruction-div">
                 <h3 id="instruction"></h3>
-<!--                <button id="pause-clock">Pause Clock</button>-->
-
-            </div>
-            <div id="p2-scoreboard">
-                <div>
-                    <h3 id="p2-name" class="player-name"></h3>
-                    <h3 id="p2-score" class="player-score"></h3>
-                </div>
-                <div>
-                    <h3 class="down" id="p2-down"></h3>
-                </div>
-
             </div>
 
 
+        <!--                <button id="pause-clock">Pause Clock</button>-->
 
         </div>
     </div>
 
     <div id="landing-screen">
-<!--        <img class="bg" src="img/25367446.jpg">-->
-        <h1>Football</h1>
-        <button id="new-game">Play</button>
-        <br>
-        <label for="house">Whose house are you playing at?</label>
-        <select class="form-control" id="house">
-            <option>RaRa's House</option>
-            <option>Pop's House</option>
-        </select>
+        <div id="heading">
+            <h1>Football</h1>
+            <div id="form">
+                <label for="house">Whose house are you playing at?</label>
+                <select class="form-control" id="house">
+                    <option>RaRa's House</option>
+                    <option>Pop's House</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="play-button">
+            <img id="play-button-img" src="img/football-big.png">
+            <div id="play-button-text">PLAY</div>
+        </div>
+
     </div>
 
     <div id="player-selection-window">

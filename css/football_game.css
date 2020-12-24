@@ -15,6 +15,9 @@ h1{
     justify-content: space-between;
 }
 
+/*#game-screen{*/
+/*    background-color: #565656;*/
+/*}*/
 
 canvas{
     border: 10px solid white;
@@ -27,16 +30,12 @@ canvas{
 /*}*/
 
 #canvas-div{
-    background-color: #565656;
-    border: 5px solid black;
-    padding-top: 4em;
-    padding-bottom: 4em;
     display: flex;
-    border-radius: 150px;
     justify-content: center;
+    width: 100%;
 }
 
-#football-icon, #test{
+#football-icon, #test, #cowboys{
     display: none;
 }
 
@@ -87,7 +86,8 @@ h1{
     font-size: 60px;
     font-family: 'Press Start 2P', cursive;
     color: saddlebrown;
-    padding: 15px;
+    padding-top: 15px;
+    width: 100%;
 }
 
 
@@ -113,7 +113,6 @@ body{
 #player-selection-window{
     background-image: none;
     background-color: rgb(76,165,81);
-
 }
 
 .pops-house{
@@ -123,6 +122,101 @@ body{
 .raras-house{
     display: none;
 }
+
+#landing-screen{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+#play-button{
+    padding-top: 22vh;
+    margin: auto;
+    position: relative;
+    text-align: center;
+    display: flex;
+}
+
+#play-button-text{
+    position: absolute;
+    top: 67%;
+    left: 29%;
+}
+
+#play-button-text{
+    font-size: 40px;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+}
+
+.form-control{
+    width: 200px;
+}
+
+#heading{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#house{
+    margin: 0 auto;
+}
+
+label{
+    text-align: center;
+}
+
+#inner-scoreboard{
+    width: 100%;
+    display: flex;
+    border: 5px solid rgb(76,165,81);
+
+    justify-content: space-between;
+}
+
+.player-score{
+    width: 200px;
+    /*justify-content: space-between;*/
+}
+
+#p1-scoreboard{
+    display: flex;
+    background-color: darkblue;
+}
+
+#p2-scoreboard{
+    display: flex;
+    text-align: end;
+    background-color: maroon;
+
+    /*flex-direction: row-reverse;*/
+}
+
+
+
+#scoreboard{
+    display: flex;
+    width: 1420px;
+    margin: 8px;
+    flex-wrap: wrap;
+}
+
+/*#landing-screen, #player-selection-window {*/
+/*    display: none;*/
+/*}*/
+
+h3{
+    color: white;
+}
+
+#instruction-div{
+    width: 100%;
+    text-align: center;
+}
+
+
 
 
 

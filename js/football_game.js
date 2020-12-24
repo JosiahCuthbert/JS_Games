@@ -12,6 +12,11 @@ let icons = [
         image: $("#test").get(0),
         xEQ: 0,
         yEQ: 0
+    },
+    {
+        image: $("#cowboys").get(0),
+        xEQ: 95,
+        yEQ: 110
     }
 ]
 
@@ -353,13 +358,13 @@ const interpretDown = () => {
 
         // $("#p2-down").innerHTML();
         if(down === 1){
-            $("#p1-down").text("1st Down");
+            $(".down").text("1st Down");
         }   if(down === 2){
-            $("#p1-down").text("2nd Down");
+            $(".down").text("2nd Down");
         }   if(down === 3){
-            $("#p1-down").text("3rd Down");
+            $(".down").text("3rd Down");
         }   if(down === 4){
-            $("#p1-down").text("4th Down");
+            $(".down").text("4th Down");
         }   if(down === 5){
             console.log(player1.possession)
             player1.possession = false;
@@ -378,17 +383,17 @@ const interpretDown = () => {
 
         // $("#p1-down").innerHTML();
         if(down === 1){
-            $("#p2-down").text("1st Down");
+            $(".down").text("1st Down");
         }   if(down === 2){
-            $("#p2-down").text("2nd Down");
+            $(".down").text("2nd Down");
         }   if(down === 3){
-            $("#p2-down").text("3rd Down");
+            $(".down").text("3rd Down");
         }   if(down === 4){
-            $("#p2-down").text("4th Down");
+            $(".down").text("4th Down");
         }   if(down === 5){
             player1.possession = true;
             player2.possession = false;
-            $("#p2-down").text("Turnover on downs!");
+            $(".down").text("Turnover on downs!");
             setTimeout(function(){
                 $("#down").text("1st Down");
             }, 2000)
@@ -513,18 +518,19 @@ let drawField = () => {
     fieldContext.fillRect(0,0,footballField.width, footballField.height)
 
     //p1 endzone
-    fieldContext.fillStyle = "red";
+    fieldContext.fillStyle = "maroon";
     fieldContext.fillRect(0,0,150, footballField.height)
     fieldContext.fillStyle = "white"
     fieldContext.fillRect(150,0,5, footballField.height)
     //p2 endzone
-    fieldContext.fillStyle = "blue"
+    fieldContext.fillStyle = "darkblue"
     fieldContext.fillRect(footballField.width-150,0,150, footballField.height)
     fieldContext.fillStyle = "white"
     fieldContext.fillRect(footballField.width-155,0,5, footballField.height)
     //midfield
     // fieldContext.fillStyle = "white"
     // fieldContext.fillRect(footballField.width/2,0,5, footballField.height)
+
 
     // ready();
 
@@ -542,14 +548,15 @@ let drawField = () => {
 
     scoreboard();
 
-    drawPlayers(player1, player2, icons[0]);
+    drawPlayers(player1, player2, icons[0], icons[2]);
 
     window.requestAnimationFrame(drawField)
 }
 
 
 
-let drawPlayers = (playerA, playerB, football) => {
+let drawPlayers = (playerA, playerB, football, centerField) => {
+    fieldContext.drawImage(centerField.image, footballField.width/2-centerField.xEQ, footballField.height/2-centerField.yEQ)
     if(playerA.possession === true){
         fieldContext.drawImage(playerA.playerImage, playerA.X - playerA.xEQ, playerA.Y - playerA.yEQ);
         fieldContext.drawImage(football.image, playerA.X - football.xEQ, playerA.Y - football.yEQ);
@@ -791,21 +798,23 @@ $("#p2-card .select-player").click(() => {
 
 $("#ready").click(() => {
     $("#player-selection-window").css("display", "none");
-    $("#game-screen").css("display", "inline");
+    $("#game-screen").css("display", "flex");
+    $("#game-screen").css("flex-wrap", "wrap");
+    $("#game-screen").css("justify-content", "center");
+    $("body").css("background-color", "#565656");
     game();
 });
 
 
-$("#new-game").click(() => {
+$("#play-button").click(() => {
     $("#landing-screen").css("display", "none");
     $("#player-selection-window").css("display", "inline");
     $("body").css("background-image", "none");
     $("body").css("background-color", "rgb(76,165,81)");
-    console.log();
     if($("#house").val() == "Pop's House"){
-        $(".pops-house").css("display", "inline");
+        $(".pops-house").css("display", "flex");
         }if($("#house").val() == "RaRa's House"){
-            $(".raras-house").css("display", "inline");
+            $(".raras-house").css("display", "flex");
         }
 })
 
@@ -830,6 +839,12 @@ const p2OutOfBounds = () => {
         downSetHut();
     }
 }
+
+$("#play-button").hover(function(){
+    $("#play-button").css("transform", "scale(1.2)")
+}, function(){
+    $("#play-button").css("transform", "scale(1)")
+})
 
 
 
