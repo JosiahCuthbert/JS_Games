@@ -25,9 +25,9 @@ let players = [
         Y: null,
         xEQ: ($("#joe-image").get(0).width/2)+3,
         yEQ: ($("#joe-image").get(0).height/2),
-        tacklingArea: 15,
-        speed: 5,
-        agility: 5,
+        tacklingArea: 40,
+        speed: 4,
+        agility: 3.5,
         score: 0,
         timeouts: 2,
         stamina: 5,
@@ -44,8 +44,8 @@ let players = [
         xEQ: ($("#dak-image").get(0).width/2),
         yEQ: ($("#dak-image").get(0).height/2),
         tacklingArea: 10,
-        speed: 5,
-        agility: 5,
+        speed: 4,
+        agility: 3.5,
         score: 0,
         timeouts: 2,
         stamina: 5,
@@ -61,9 +61,9 @@ let players = [
         Y: null,
         xEQ: ($("#rara-image").get(0).width/2)-5,
         yEQ: ($("#rara-image").get(0).height/2)+5,
-        tacklingArea: 15,
-        speed: 5,
-        agility: 5,
+        tacklingArea: 40,
+        speed: 4,
+        agility: 3.5,
         score: 0,
         timeouts: 2,
         stamina: 5,
@@ -79,9 +79,9 @@ let players = [
         Y: null,
         xEQ: ($("#linsay-image").get(0).width/2),
         yEQ: ($("#linsay-image").get(0).height/2),
-        tacklingArea: 15,
-        speed: 5,
-        agility: 5,
+        tacklingArea: 40,
+        speed: 4,
+        agility: 3.5,
         score: 0,
         timeouts: 2,
         stamina: 5,
@@ -97,9 +97,9 @@ let players = [
         Y: null,
         xEQ: ($("#chad-image").get(0).width/2)-7,
         yEQ: ($("#chad-image").get(0).height/2),
-        tacklingArea: 15,
-        speed: 5,
-        agility: 5,
+        tacklingArea: 40,
+        speed: 4,
+        agility: 3.5,
         score: 0,
         timeouts: 2,
         stamina: 5,
@@ -115,9 +115,9 @@ let players = [
         Y: null,
         xEQ: ($("#hannah-image").get(0).width/2),
         yEQ: ($("#hannah-image").get(0).height/2)-4,
-        tacklingArea: 15,
-        speed: 5,
-        agility: 5,
+        tacklingArea: 40,
+        speed: 4,
+        agility: 3.5,
         score: 0,
         timeouts: 2,
         stamina: 5,
@@ -133,9 +133,9 @@ let players = [
         Y: null,
         xEQ: ($("#matt-image").get(0).width/2),
         yEQ: ($("#matt-image").get(0).height/2)-25,
-        tacklingArea: 15,
-        speed: 5,
-        agility: 5,
+        tacklingArea: 40,
+        speed: 4,
+        agility: 3.5,
         score: 0,
         timeouts: 2,
         stamina: 5,
@@ -151,9 +151,9 @@ let players = [
         Y: null,
         xEQ: ($("#cade-image").get(0).width/2)-5,
         yEQ: ($("#cade-image").get(0).height/2)-15,
-        tacklingArea: 15,
-        speed: 5,
-        agility: 5,
+        tacklingArea: 40,
+        speed: 4,
+        agility: 3.5,
         score: 0,
         timeouts: 2,
         stamina: 5,
@@ -169,9 +169,9 @@ let players = [
         Y: null,
         xEQ: ($("#cole-image").get(0).width/2),
         yEQ: ($("#cole-image").get(0).height/2)-15,
-        tacklingArea: 15,
-        speed: 5,
-        agility: 5,
+        tacklingArea: 60,
+        speed: 15,
+        agility: 15,
         score: 0,
         timeouts: 2,
         stamina: 5,
@@ -187,9 +187,9 @@ let players = [
         Y: null,
         xEQ: ($("#pop-image").get(0).width/2),
         yEQ: ($("#pop-image").get(0).height/2),
-        tacklingArea: 15,
-        speed: 5,
-        agility: 5,
+        tacklingArea: 40,
+        speed: 4,
+        agility: 3.5,
         score: 0,
         timeouts: 2,
         stamina: 5,
@@ -205,9 +205,9 @@ let players = [
         Y: null,
         xEQ: ($("#jill-image").get(0).width/2)-5,
         yEQ: ($("#jill-image").get(0).height/2),
-        tacklingArea: 15,
-        speed: 5,
-        agility: 5,
+        tacklingArea: 40,
+        speed: 4,
+        agility: 3.5,
         score: 0,
         timeouts: 2,
         stamina: 5,
@@ -223,9 +223,9 @@ let players = [
         Y: null,
         xEQ: ($("#pierson-image").get(0).width/2)-9,
         yEQ: ($("#pierson-image").get(0).height/2)-15,
-        tacklingArea: 15,
-        speed: 5,
-        agility: 5,
+        tacklingArea: 40,
+        speed: 4,
+        agility: 3.5,
         score: 0,
         timeouts: 2,
         stamina: 5,
@@ -241,9 +241,9 @@ let players = [
         Y: null,
         xEQ: ($("#lexie-image").get(0).width/2)-8,
         yEQ: ($("#lexie-image").get(0).height/2)-5,
-        tacklingArea: 15,
-        speed: 5,
-        agility: 5,
+        tacklingArea: 40,
+        speed: 4,
+        agility: 3.5,
         score: 0,
         timeouts: 2,
         stamina: 5,
@@ -259,9 +259,9 @@ let players = [
         Y: null,
         xEQ: ($("#dixie-image").get(0).width/2)-5,
         yEQ: ($("#dixie-image").get(0).height/2)-15,
-        tacklingArea: 15,
-        speed: 5,
-        agility: 5,
+        tacklingArea: 40,
+        speed: 4,
+        agility: 3.5,
         score: 0,
         timeouts: 2,
         stamina: 5,
@@ -277,9 +277,9 @@ let players = [
         Y: null,
         xEQ: ($("#bailey-image").get(0).width/2)-5,
         yEQ: ($("#bailey-image").get(0).height/2)-5,
-        tacklingArea: 15,
-        speed: 5,
-        agility: 5,
+        tacklingArea: 40,
+        speed: 4,
+        agility: 3.5,
         score: 0,
         timeouts: 2,
         stamina: 5,
@@ -295,9 +295,9 @@ let players = [
         Y: null,
         xEQ: ($("#mema-image").get(0).width/2)-5,
         yEQ: ($("#mema-image").get(0).height/2)-20,
-        tacklingArea: 15,
-        speed: 5,
-        agility: 5,
+        tacklingArea: 40,
+        speed: 4,
+        agility: 3.5,
         score: 0,
         timeouts: 2,
         stamina: 5,
@@ -313,9 +313,9 @@ let players = [
         Y: null,
         xEQ: ($("#granny-image").get(0).width/2)-4,
         yEQ: ($("#granny-image").get(0).height/2),
-        tacklingArea: 15,
-        speed: 5,
-        agility: 5,
+        tacklingArea: 40,
+        speed: 4,
+        agility: 3.5,
         score: 0,
         timeouts: 2,
         stamina: 5,
@@ -324,10 +324,13 @@ let players = [
     },
 ]
 
+
 let player1;
 let player2;
-let readyToChooseP1 = false;
-let readyToChooseP2 = false;
+let startingPosition = 250;
+let defenderDistance = 150;
+// let readyToChooseP1 = false;
+// let readyToChooseP2 = false;
 let player1Chosen = false;
 let player2Chosen = false;
 
@@ -506,8 +509,9 @@ const scoreboard = () => {
 
 let drawField = () => {
     //field
-    fieldContext.fillStyle = "green";
+    fieldContext.fillStyle = "rgb(76,165,81)";
     fieldContext.fillRect(0,0,footballField.width, footballField.height)
+
     //p1 endzone
     fieldContext.fillStyle = "red";
     fieldContext.fillRect(0,0,150, footballField.height)
@@ -530,6 +534,8 @@ let drawField = () => {
 
     p1Tackle();
     p2Tackle();
+    p1OutOfBounds();
+    p2OutOfBounds();
     touchdown();
 
     interpretDown();
@@ -561,15 +567,15 @@ let drawPlayers = (playerA, playerB, football) => {
 const newSetOfDowns = () => {
     down = 1;
     if (player1.possession) {
-        player1.X = 250;
+        player1.X = startingPosition;
         player1.Y = (footballField.height / 2);
-        player2.X = player1.X + 250;
+        player2.X = player1.X + defenderDistance;
         player2.Y = (footballField.height / 2);
     }
     if (player2.possession) {
-        player2.X = footballField.width - 250;
+        player2.X = footballField.width - startingPosition;
         player2.Y = (footballField.height / 2);
-        player1.X = player2.X - 250;
+        player1.X = player2.X - defenderDistance;
         player1.Y = (footballField.height / 2);
     }
 }
@@ -590,7 +596,7 @@ const p1Tackle = () => {
         down++;
         player2.Y = footballField.height/2;
         player1.Y = footballField.height/2;
-        player1.X = player2.X -250
+        player1.X = player2.X -defenderDistance
         downSetHut();
     }
 }
@@ -602,18 +608,10 @@ const p2Tackle = () => {
         down++;
         player1.Y = footballField.height/2;
         player2.Y = footballField.height/2;
-        player2.X = player1.X + 250
+        player2.X = player1.X + defenderDistance
         downSetHut();
     }
 }
-
-// console.log(footballField.length - 150);
-
-// const p1Touchdown = () => {
-//
-// }
-
-
 
 const touchdown = () => {
     if(player2.possession && player2.X < 150){
@@ -713,9 +711,9 @@ function countdown() {
 
 }
 
-$('#pause-clock').click(function () {
-    paused = true;
-});
+// $('#pause-clock').click(function () {
+//     paused = true;
+// });
 
 $(".player-img").hover(function (){
     $(this).css("transform", "scale(1.2)");
@@ -783,6 +781,7 @@ $(".player-img").click(function(){
 
 $("#p1-card .select-player").click(() => {
     player1Chosen = true;
+    $("")
 });
 
 $("#p2-card .select-player").click(() => {
@@ -800,10 +799,37 @@ $("#ready").click(() => {
 $("#new-game").click(() => {
     $("#landing-screen").css("display", "none");
     $("#player-selection-window").css("display", "inline");
-
+    $("body").css("background-image", "none");
+    $("body").css("background-color", "rgb(76,165,81)");
+    console.log();
+    if($("#house").val() == "Pop's House"){
+        $(".pops-house").css("display", "inline");
+        }if($("#house").val() == "RaRa's House"){
+            $(".raras-house").css("display", "inline");
+        }
 })
 
+const p1OutOfBounds = () => {
+    if (player1.possession === true && (player1.Y < 0 || player1.Y > footballField.height)){
+        console.log("out of bounds");
+        down++;
+        player2.Y = footballField.height/2;
+        player1.Y = footballField.height/2;
+        player2.X = player1.X + defenderDistance;
+        downSetHut();
+    }
+}
 
+const p2OutOfBounds = () => {
+    if (player1.possession === true && (player1.Y < 0 || player1.Y > footballField.height)){
+        console.log("out of bounds");
+        down++;
+        player2.Y = footballField.height/2;
+        player1.Y = footballField.height/2;
+        player1.X = player2.X - defenderDistance;
+        downSetHut();
+    }
+}
 
 
 
