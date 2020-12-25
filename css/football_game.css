@@ -171,25 +171,28 @@ label{
 #inner-scoreboard{
     width: 100%;
     display: flex;
-    border: 5px solid rgb(76,165,81);
+    border: 5px solid black;
 
     justify-content: space-between;
 }
 
 .player-score{
-    width: 200px;
+    width: 400px;
     /*justify-content: space-between;*/
 }
 
 #p1-scoreboard{
     display: flex;
-    background-color: darkblue;
+    /*background-color: darkblue;*/
+    background-image: linear-gradient(to right, darkblue , white);
+
 }
 
 #p2-scoreboard{
     display: flex;
     text-align: end;
-    background-color: maroon;
+    /*background-color: maroon;*/
+    background-image: linear-gradient(to left, maroon , white);
 
     /*flex-direction: row-reverse;*/
 }
@@ -209,6 +212,7 @@ label{
 
 h3{
     color: white;
+    font-family: 'Russo One', sans-serif;
 }
 
 #instruction-div{
