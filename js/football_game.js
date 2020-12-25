@@ -5,8 +5,8 @@
 let icons = [
     {
         image: $("#football-icon").get(0),
-        xEQ: -10,
-        yEQ: -20
+        xEQ: -20,
+        yEQ: -35
     },
     {
         image: $("#test").get(0),
@@ -30,14 +30,15 @@ let players = [
         Y: null,
         xEQ: ($("#joe-image").get(0).width/2)+3,
         yEQ: ($("#joe-image").get(0).height/2),
-        tacklingArea: 40,
+        tacklingArea: 60,
         speed: 4,
         agility: 3.5,
         score: 0,
         timeouts: 2,
         stamina: 5,
         offense: 1.0,
-        defense: 1.0
+        defense: 1.2,
+        bio: "Joe's best days of playing football may be behind him, but that doesn't mean he's still not a threat on the field. With solid all-around stats and an aggressive style of play, he can be tough to handle in many situations."
     },
     {
         id: 2,
@@ -48,14 +49,15 @@ let players = [
         Y: null,
         xEQ: ($("#dak-image").get(0).width/2),
         yEQ: ($("#dak-image").get(0).height/2),
-        tacklingArea: 10,
-        speed: 4,
-        agility: 3.5,
+        tacklingArea: 100,
+        speed: 8,
+        agility: 8,
         score: 0,
         timeouts: 2,
         stamina: 5,
-        offense: 1.0,
-        defense: 1.0
+        offense: 1.3,
+        defense: 1.4,
+        bio: "Dak Prescott is the current QB for the Dallas Cowboys. He is not only one of the best QBs in the league but also has perhaps the more important honor of being one of Cade Humphrey's favorite football players. Although he's coming off a severe injury, you can't deny his incredible talent."
     },
     {
         id: 3,
@@ -66,14 +68,15 @@ let players = [
         Y: null,
         xEQ: ($("#rara-image").get(0).width/2)-5,
         yEQ: ($("#rara-image").get(0).height/2)+5,
-        tacklingArea: 40,
+        tacklingArea: 50,
         speed: 4,
         agility: 3.5,
         score: 0,
         timeouts: 2,
         stamina: 5,
         offense: 1.0,
-        defense: 1.0
+        defense: 1.2,
+        bio: "RaRa may not be well known as a football player, but don't let that fool you. Her desire to win and underrated football knowledge make her an opponent you do not want to face."
     },
     {
         id: 4,
@@ -84,14 +87,15 @@ let players = [
         Y: null,
         xEQ: ($("#linsay-image").get(0).width/2),
         yEQ: ($("#linsay-image").get(0).height/2),
-        tacklingArea: 40,
+        tacklingArea: 50,
         speed: 4,
         agility: 3.5,
         score: 0,
         timeouts: 2,
         stamina: 5,
         offense: 1.0,
-        defense: 1.0
+        defense: 1.2,
+        bio: "You don't raise two football stars in the making without learning a thing or two about the game along the way. Linsay's tackling ability and speed have been honed through hours of chasing down Cade and Cole. This is one mother you don't wanna mess with."
     },
     {
         id: 5,
@@ -102,14 +106,15 @@ let players = [
         Y: null,
         xEQ: ($("#chad-image").get(0).width/2)-7,
         yEQ: ($("#chad-image").get(0).height/2),
-        tacklingArea: 40,
+        tacklingArea: 100,
         speed: 4,
         agility: 3.5,
         score: 0,
         timeouts: 2,
         stamina: 5,
         offense: 1.0,
-        defense: 1.0
+        defense: 1.2,
+        bio: "Chad's incredible tackling ability is simply hard to beat. Armed with distinct physical advantages from his days at Chad Humphrey Fitness™, you would be hard pressed to find a competitor more fierce than Chad."
     },
     {
         id: 6,
@@ -120,14 +125,15 @@ let players = [
         Y: null,
         xEQ: ($("#hannah-image").get(0).width/2),
         yEQ: ($("#hannah-image").get(0).height/2)-4,
-        tacklingArea: 40,
+        tacklingArea: 50,
         speed: 4,
         agility: 3.5,
         score: 0,
         timeouts: 2,
         stamina: 5,
         offense: 1.0,
-        defense: 1.0
+        defense: 1.2,
+        bio: "Hannah may be best known for her work in the medical field, but her work on the football field shouldn't go overlooked. An agile "
     },
     {
         id: 7,
@@ -138,14 +144,15 @@ let players = [
         Y: null,
         xEQ: ($("#matt-image").get(0).width/2),
         yEQ: ($("#matt-image").get(0).height/2)-25,
-        tacklingArea: 40,
+        tacklingArea: 50,
         speed: 4,
         agility: 3.5,
         score: 0,
         timeouts: 2,
         stamina: 5,
         offense: 1.0,
-        defense: 1.0
+        defense: 1.2,
+        bio: "Matt's ingenuity and persistence make him a tremendous force on the gridiron. You may know him as \"Long Range\" on the basketball court, and he is also known for his ability to break out for long runs on the football field."
     },
     {
         id: 8,
@@ -156,14 +163,15 @@ let players = [
         Y: null,
         xEQ: ($("#cade-image").get(0).width/2)-5,
         yEQ: ($("#cade-image").get(0).height/2)-15,
-        tacklingArea: 40,
-        speed: 4,
-        agility: 3.5,
+        tacklingArea: 100,
+        speed: 8,
+        agility: 8,
         score: 0,
         timeouts: 2,
         stamina: 5,
-        offense: 1.0,
-        defense: 1.0
+        offense: 1.2,
+        defense: 1.5,
+        bio: "Cade Humphrey's love of the game is second to none. He lives football, he breathes football, he sleeps football, and you can bet he plays football too. Cade's potential on the field is so great that we may one day have the pleasure of watching him play for the Dallas Cowboys."
     },
     {
         id: 9,
@@ -174,14 +182,15 @@ let players = [
         Y: null,
         xEQ: ($("#cole-image").get(0).width/2),
         yEQ: ($("#cole-image").get(0).height/2)-15,
-        tacklingArea: 60,
-        speed: 15,
-        agility: 15,
+        tacklingArea: 100,
+        speed: 10,
+        agility: 10,
         score: 0,
         timeouts: 2,
         stamina: 5,
-        offense: 1.0,
-        defense: 1.0
+        offense: 1.5,
+        defense: 1.7,
+        bio: "Cole may be a bit wild at times but his unatched athleticism and motor make him an extremely worthy opponent. His reckless style of play makes him extremely unpredictable."
     },
     {
         id: 10,
@@ -192,14 +201,15 @@ let players = [
         Y: null,
         xEQ: ($("#pop-image").get(0).width/2),
         yEQ: ($("#pop-image").get(0).height/2),
-        tacklingArea: 40,
+        tacklingArea: 50,
         speed: 4,
         agility: 3.5,
         score: 0,
         timeouts: 2,
         stamina: 5,
         offense: 1.0,
-        defense: 1.0
+        defense: 1.2,
+        bio: "bio"
     },
     {
         id: 11,
@@ -210,14 +220,15 @@ let players = [
         Y: null,
         xEQ: ($("#jill-image").get(0).width/2)-5,
         yEQ: ($("#jill-image").get(0).height/2),
-        tacklingArea: 40,
+        tacklingArea: 50,
         speed: 4,
         agility: 3.5,
         score: 0,
         timeouts: 2,
         stamina: 5,
         offense: 1.0,
-        defense: 1.0
+        defense: 1.2,
+        bio: "bio"
     },
     {
         id: 12,
@@ -228,14 +239,15 @@ let players = [
         Y: null,
         xEQ: ($("#pierson-image").get(0).width/2)-9,
         yEQ: ($("#pierson-image").get(0).height/2)-15,
-        tacklingArea: 40,
+        tacklingArea: 50,
         speed: 4,
         agility: 3.5,
         score: 0,
         timeouts: 2,
         stamina: 5,
         offense: 1.0,
-        defense: 1.0
+        defense: 1.2,
+        bio: "bio"
     },
     {
         id: 13,
@@ -246,14 +258,15 @@ let players = [
         Y: null,
         xEQ: ($("#lexie-image").get(0).width/2)-8,
         yEQ: ($("#lexie-image").get(0).height/2)-5,
-        tacklingArea: 40,
+        tacklingArea: 50,
         speed: 4,
         agility: 3.5,
         score: 0,
         timeouts: 2,
         stamina: 5,
         offense: 1.0,
-        defense: 1.0
+        defense: 1.2,
+        bio: "bio"
     },
     {
         id: 14,
@@ -264,14 +277,15 @@ let players = [
         Y: null,
         xEQ: ($("#dixie-image").get(0).width/2)-5,
         yEQ: ($("#dixie-image").get(0).height/2)-15,
-        tacklingArea: 40,
+        tacklingArea: 50,
         speed: 4,
         agility: 3.5,
         score: 0,
         timeouts: 2,
         stamina: 5,
         offense: 1.0,
-        defense: 1.0
+        defense: 1.2,
+        bio: "bio"
     },
     {
         id: 15,
@@ -282,14 +296,15 @@ let players = [
         Y: null,
         xEQ: ($("#bailey-image").get(0).width/2)-5,
         yEQ: ($("#bailey-image").get(0).height/2)-5,
-        tacklingArea: 40,
+        tacklingArea: 50,
         speed: 4,
         agility: 3.5,
         score: 0,
         timeouts: 2,
         stamina: 5,
         offense: 1.0,
-        defense: 1.0
+        defense: 1.2,
+        bio: "bio"
     },
     {
         id: 16,
@@ -300,14 +315,15 @@ let players = [
         Y: null,
         xEQ: ($("#mema-image").get(0).width/2)-5,
         yEQ: ($("#mema-image").get(0).height/2)-20,
-        tacklingArea: 40,
+        tacklingArea: 50,
         speed: 4,
         agility: 3.5,
         score: 0,
         timeouts: 2,
         stamina: 5,
         offense: 1.0,
-        defense: 1.0
+        defense: 1.2,
+        bio: "bio"
     },
     {
         id: 17,
@@ -318,14 +334,15 @@ let players = [
         Y: null,
         xEQ: ($("#granny-image").get(0).width/2)-4,
         yEQ: ($("#granny-image").get(0).height/2),
-        tacklingArea: 40,
+        tacklingArea: 50,
         speed: 4,
         agility: 3.5,
         score: 0,
         timeouts: 2,
         stamina: 5,
         offense: 1.0,
-        defense: 1.0
+        defense: 1.2,
+        bio: "Granny doesn't mess around when it comes to football. Like the carefully crafted baked goods she is so famous for, Granny's approach on the gridiron is meticulous and refined."
     },
 ]
 
@@ -338,7 +355,7 @@ let defenderDistance = 150;
 // let readyToChooseP2 = false;
 let player1Chosen = false;
 let player2Chosen = false;
-
+let house;
 
 // let player1 = players[0];
 // let player2 = players[8];
@@ -353,8 +370,8 @@ let paused = false;
 const interpretDown = () => {
 
     if(player1.possession){
-        $("#p2-down").css("display", "none");
-        $("#p1-down").css("display", "inline");
+        $("#p2-football-icon").css("display", "none");
+        $("#p1-football-icon").css("display", "flex");
 
         // $("#p2-down").innerHTML();
         if(down === 1){
@@ -366,20 +383,19 @@ const interpretDown = () => {
         }   if(down === 4){
             $(".down").text("4th Down");
         }   if(down === 5){
-            console.log(player1.possession)
             player1.possession = false;
             player2.possession = true;
 
             setTimeout(function(){
-                $("#p1-down").text("Turnover on downs!");
+                $(".down").text("Turnover on downs!");
             }, 2000)
             newSetOfDowns();
         }
     }
 
     if(player2.possession){
-        $("#p1-down").css("display", "none");
-        $("#p2-down").css("display", "inline");
+        $("#p1-football-icon").css("display", "none");
+        $("#p2-football-icon").css("display", "flex");
 
         // $("#p1-down").innerHTML();
         if(down === 1){
@@ -415,29 +431,61 @@ const interpretDown = () => {
 // }
 
 const controller = {
-    87: {pressed: false, func: function(){
-            player2.Y-=player2.agility;
-        }},
-    83: {pressed: false, func: function(){
-            player2.Y+=player2.agility
-        }},
-    65: {pressed: false, func: function(){
-            player2.X-=player2.speed
-        }},
-    68: {pressed: false, func: function(){
-            player2.X+=player2.speed
-        }},
     38: {pressed: false, func: function(){
-            player1.Y-=player1.agility
+        if(player2.possession === true){
+            player2.Y-=player2.agility * player2.offense;
+        }   if(player2.possession === false){
+            player2.Y-=(player2.agility * player2.defense);
+        }
         }},
     40: {pressed: false, func: function(){
-            player1.Y+=player1.agility
+            if(player2.possession === true){
+            player2.Y+=player2.agility * player2.offense;
+        }   if(player2.possession === false){
+            player2.Y+=(player2.agility * player2.defense);
+        }
         }},
     37: {pressed: false, func: function(){
-            player1.X-=player1.speed
+            if(player2.possession === true){
+            player2.X-=player2.speed * player2.offense;
+        }   if(player2.possession === false){
+            player2.X-=(player2.speed * player2.defense);
+        }
         }},
     39: {pressed: false, func: function(){
-            player1.X+=player1.speed
+            if(player2.possession === true){
+            player2.X+=player2.speed * player2.offense;
+        }   if(player2.possession === false){
+            player2.X+=(player2.speed * player2.defense);
+        }
+        }},
+    87: {pressed: false, func: function(){
+            if(player1.possession === true){
+            player1.Y-=player1.agility * player1.offense;
+        }   if(player1.possession === false){
+            player1.Y-=(player1.agility * player1.defense);
+        }
+        }},
+    83: {pressed: false, func: function(){
+            if(player1.possession === true){
+            player1.Y+=player1.agility * player1.offense;
+        }   if(player1.possession === false){
+            player1.Y+=(player1.agility * player1.defense);
+        }
+        }},
+    65: {pressed: false, func: function(){
+            if(player1.possession === true){
+            player1.X-=player1.speed * player1.offense;
+        }   if(player1.possession === false){
+            player1.X-=(player1.speed * player1.defense);
+        }
+        }},
+    68: {pressed: false, func: function(){
+            if(player1.possession === true){
+            player1.X+=player1.speed * player1.offense;
+        }   if(player1.possession === false){
+            player1.X+=(player1.speed * player1.defense);
+        }
         }}
 }
 
@@ -598,46 +646,97 @@ const startGame = () => {
 
 const p1Tackle = () => {
 
-    if (!player1.possession && player2.X >= player1.X - player1.tacklingArea && player2.X <= player1.X + player1.tacklingArea && player2.Y >= player1.Y - player1.tacklingArea && player2.Y <= player1.Y + player1.tacklingArea) {
+    if (!player1.possession && player2.X >= player1.X - player1.tacklingArea && player2.X <= player1.X + player1.tacklingArea && player2.Y >= player1.Y - player1.tacklingArea && player2.Y <= player1.Y + player1.tacklingArea && locked === false) {
+        locked = true;
         console.log("p1 tackle")
         down++;
         player2.Y = footballField.height/2;
         player1.Y = footballField.height/2;
         player1.X = player2.X -defenderDistance
-        downSetHut();
+        if(down<5){
+            $("#instruction").text(player1.name + " tackled " + player2.name + "!");
+            setTimeout(function(){
+                downSetHut();
+            }, 1500)
+        }   if(down === 5){
+            $("#instruction").text("Turnover on downs by " + player2.name +"!");
+            setTimeout(function(){
+                downSetHut();
+            }, 1500)
+        }
+
     }
 }
 
 const p2Tackle = () => {
 
-    if(!player2.possession && player1.X >= player2.X-player2.tacklingArea  && player1.X <= player2.X+player2.tacklingArea  && player1.Y >= player2.Y-player2.tacklingArea  && player1.Y <= player2.Y+player2.tacklingArea){
+    if(!player2.possession && player1.X >= player2.X-player2.tacklingArea  && player1.X <= player2.X+player2.tacklingArea  && player1.Y >= player2.Y-player2.tacklingArea  && player1.Y <= player2.Y+player2.tacklingArea && locked === false){
+        locked = true;
         console.log("p2 tackle")
         down++;
         player1.Y = footballField.height/2;
         player2.Y = footballField.height/2;
         player2.X = player1.X + defenderDistance
-        downSetHut();
+        $("#instruction").text(player2.name + " tackled " + player1.name + "!");
+        setTimeout(function(){
+            downSetHut();
+        }, 1500)
     }
 }
 
 const touchdown = () => {
-    if(player2.possession && player2.X < 150){
+    if(player2.possession && player2.X < 150 && locked === false){
+        // console.log("p2 touchdown");
+        // player2.score+=7;
+        // player2.possession = false;
+        // player1.possession = true;
+        // newSetOfDowns()
+        // downSetHut()
+
+        // player2.position+=100;
         console.log("p2 touchdown");
         player2.score+=7;
-        player2.possession = false;
-        player1.possession = true;
-        newSetOfDowns();
-        downSetHut()
+        // $("#p2-score").text("+7");
+        $("#instruction").text("Touchdown " + player2.name + "!!!");
+        locked = true;
+
+        setTimeout(function(){
+
+            // $("#p2-score").text(player2.score);
+            player2.possession = false;
+            player1.possession = true;
+            newSetOfDowns();
+            downSetHut()
+
+        }, 3000)
+
     }
-    if(player1.possession && player1.X > 1250){
+    if(player1.possession && player1.X > 1250 && locked === false){
+        // console.log("p1 touchdown");
+        // player1.score+=7;
+        // player1.possession = false;
+        // player2.possession = true;
+        // newSetOfDowns()
+        // downSetHut()
+        // player1.position-=100;
         console.log("p1 touchdown");
         player1.score+=7;
-        player1.possession = false;
-        player2.possession = true;
-        newSetOfDowns()
-        downSetHut()
+        // $("#p2-score").text("+7");
+        $("#instruction").text("Touchdown " + player1.name + "!!!");
+        locked = true;
+
+        setTimeout(function(){
+
+            // $("#p2-score").text(player2.score);
+            player1.possession = false;
+            player2.possession = true;
+            newSetOfDowns();
+            downSetHut()
+
+        }, 3000)
     }
 }
+
 
 const downSetHut = () => {
     locked = true;
@@ -718,6 +817,24 @@ function countdown() {
 
 }
 
+
+
+$("#play-button").click(() => {
+    $("#landing-screen").css("display", "none");
+    $("#player-selection-window").css("display", "inline");
+    $("body").css("background-image", "none");
+    $("body").css("background-color", "rgb(76,165,81)");
+    if($("#house").val() == "Pop's House"){
+        $(".pops-house").css("display", "flex");
+        house = ".pops-house"
+    }if($("#house").val() == "RaRa's House"){
+        $(".raras-house").css("display", "flex");
+        house = ".raras-house"
+    }
+})
+
+
+
 // $('#pause-clock').click(function () {
 //     paused = true;
 // });
@@ -731,26 +848,54 @@ $(".player-img").hover(function (){
 // players.forEach((player) => {
 //
 // })
+const speedScale = 10;
+const agilityScale = 10;
+const tacklingScale = 100;
+const offenseScale = 1.5;
+const defenseScale = 1.7;
+
+// let chosenPlayer;
+
 
 $(".player-img").click(function(){
     // console.log($(this).data("name"));
     if(player1Chosen === false){
         for(let i = 0;i<players.length;i++){
             if($(this).data("name") === players[i].name) {
+                $(house).css("display", "flex")
                 $(this).parent().css("display", "none")
-                console.log(players[i]);
-                $("#p1-card .chosen-name").html(players[i].name)
-                // $("#p1-card, .chosen-image").src(players[i].playerImage)
-                $("#p1-stats .speed").html(players[i].speed)
-                $("#p1-stats .agility").html(players[i].agility)
-                $("#p1-stats .tackling").html(players[i].tacklingArea)
-                $("#p1-stats .offense").html(players[i].offense)
-                $("#p1-stats .defense").html(players[i].defense)
-                $("#p1-stats .stamina").html(players[i].stamina)
-                player1 = players[i];
-                // console.log(player1);
+                $(this).parent().addClass("chosen-player")
+                $("#p1-card .chosen-name").text(players[i].name)
 
-                // readyToChooseP1 = true;
+                let scale = $(".scale").width();
+
+                $("#p1-speed").css("width", (players[i].speed/speedScale)*scale + "px")
+                $("#p1-speed").css("height", "15px")
+                $("#p1-speed").css("background-color", "darkblue")
+
+                $("#p1-agility").css("width", (players[i].agility/agilityScale)*scale + "px")
+                $("#p1-agility").css("height", "15px")
+                $("#p1-agility").css("background-color", "darkblue")
+
+                $("#p1-tackling").css("width", (players[i].tacklingArea/tacklingScale)*scale + "px")
+                $("#p1-tackling").css("height", "15px")
+                $("#p1-tackling").css("background-color", "darkblue")
+
+                $("#p1-agility").css("width", (players[i].agility/agilityScale)*scale + "px")
+                $("#p1-agility").css("height", "15px")
+                $("#p1-agility").css("background-color", "darkblue")
+
+                $("#p1-offense").css("width", (players[i].offense/offenseScale)*scale + "px")
+                $("#p1-offense").css("height", "15px")
+                $("#p1-offense").css("background-color", "darkblue")
+
+                $("#p1-defense").css("width", (players[i].defense/defenseScale)*scale + "px")
+                $("#p1-defense").css("height", "15px")
+                $("#p1-defense").css("background-color", "darkblue")
+
+                $("#p1-bio").text(players[i].bio);
+
+                player1 = players[i];
                 $("#p1-card .select-player").css("display", "inline");
                 break;
             }
@@ -765,19 +910,41 @@ $(".player-img").click(function(){
         for(let i = 0;i<players.length;i++){
             if($(this).data("name") === players[i].name) {
                 $(this).parent().css("display", "none")
-                console.log(players[i]);
-                $("#p2-card .chosen-name").html(players[i].name)
-                // $("#p2-card, .chosen-image").src(players[i].playerImage)
-                $("#p2-stats .speed").html(players[i].speed)
-                $("#p2-stats .agility").html(players[i].agility)
-                $("#p2-stats .tackling").html(players[i].tacklingArea)
-                $("#p2-stats .offense").html(players[i].offense)
-                $("#p2-stats .defense").html(players[i].defense)
-                $("#p2-stats .stamina").html(players[i].stamina)
-                player2 = players[i];
-                // console.log(player1);
+                // $(".chosen-player").css("display", "none")
+                // $(house).css("display", "flex")
 
-                // readyToChooseP1 = true;
+                $("#p2-card .chosen-name").text(players[i].name)
+
+                let scale = $(".scale").width();
+
+                $("#p2-speed").css("width", (players[i].speed/speedScale)*scale + "px")
+                $("#p2-speed").css("height", "15px")
+                $("#p2-speed").css("background-color", "maroon")
+
+                $("#p2-agility").css("width", (players[i].agility/agilityScale)*scale + "px")
+                $("#p2-agility").css("height", "15px")
+                $("#p2-agility").css("background-color", "maroon")
+
+                $("#p2-tackling").css("width", (players[i].tacklingArea/tacklingScale)*scale + "px")
+                $("#p2-tackling").css("height", "15px")
+                $("#p2-tackling").css("background-color", "maroon")
+
+                $("#p2-agility").css("width", (players[i].agility/agilityScale)*scale + "px")
+                $("#p2-agility").css("height", "15px")
+                $("#p2-agility").css("background-color", "maroon")
+
+                $("#p2-offense").css("width", (players[i].offense/offenseScale)*scale + "px")
+                $("#p2-offense").css("height", "15px")
+                $("#p2-offense").css("background-color", "maroon")
+
+                $("#p2-defense").css("width", (players[i].defense/defenseScale)*scale + "px")
+                $("#p2-defense").css("height", "15px")
+                $("#p2-defense").css("background-color", "maroon")
+
+                $("#p2-bio").text(players[i].bio);
+
+
+                player2 = players[i];
                 $("#p2-card .select-player").css("display", "inline");
                 break;
             }
@@ -788,35 +955,30 @@ $(".player-img").click(function(){
 
 $("#p1-card .select-player").click(() => {
     player1Chosen = true;
-    $("")
+    $("#p1-card .select-player").css("display", "none");
+    $("#choose").text("Choose Player 2");
 });
 
 $("#p2-card .select-player").click(() => {
     player2Chosen = true;
-    $("#ready").css("display", "inline");
+    $("#p2-card .select-player").css("display", "none");
+    $("#choose").text("Click Here to Play!");
+    $("#choose").click(function(){
+        $("#player-selection-window").css("display", "none");
+        $("#game-screen").css("display", "flex");
+        $("#game-screen").css("flex-wrap", "wrap");
+        $("#game-screen").css("justify-content", "center");
+        $("body").css("background-color", "black");
+        game();
+    })
 });
 
-$("#ready").click(() => {
-    $("#player-selection-window").css("display", "none");
-    $("#game-screen").css("display", "flex");
-    $("#game-screen").css("flex-wrap", "wrap");
-    $("#game-screen").css("justify-content", "center");
-    $("body").css("background-color", "#565656");
-    game();
-});
+// $("#ready").click(() => {
+//
+// });
 
 
-$("#play-button").click(() => {
-    $("#landing-screen").css("display", "none");
-    $("#player-selection-window").css("display", "inline");
-    $("body").css("background-image", "none");
-    $("body").css("background-color", "rgb(76,165,81)");
-    if($("#house").val() == "Pop's House"){
-        $(".pops-house").css("display", "flex");
-        }if($("#house").val() == "RaRa's House"){
-            $(".raras-house").css("display", "flex");
-        }
-})
+
 
 const p1OutOfBounds = () => {
     if (player1.possession === true && (player1.Y < 0 || player1.Y > footballField.height)){

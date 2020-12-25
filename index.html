@@ -23,7 +23,7 @@
             </canvas>
         </div>
 
-        <img src="img/football.png" id="football-icon" width="60" height="65">
+        <img src="img/football.png" id="football-icon" width="42" height="24">
         <img src="img/IMG_2526.JPG" id="test" class="player-img">
         <img src="img/dallas-cowboys_416x416-removebg-preview.png" id="cowboys">
 
@@ -36,22 +36,32 @@
             <div id="inner-scoreboard">
                 <div id="p1-scoreboard" class="player-score">
                     <div>
-                        <h3 id="p1-name" class="player-name"></h3>
+                        <div id="p1-possession-name" class="possession-name">
+                            <h3 id="p1-name" class="player-name"></h3>
+                            <img src="img/football.png" id="p1-football-icon" class="football-icon" width="42" height="24">
+                        </div>
+
                         <h3 id="p1-score" class="player-score"></h3>
                     </div>
 
 
                 </div>
 
-                <div>
+                <div id="middle">
                     <h3 class="down"></h3>
+<!--                    <div id="instruction-div">-->
+                    <h3 id="instruction"></h3>
+<!--                    </div>-->
                 </div>
                 <div id="p2-scoreboard" class="player-score">
 <!--                    <div>-->
 <!--                        <h3 class="down" id="p2-down"></h3>-->
 <!--                    </div>-->
                     <div>
-                        <h3 id="p2-name" class="player-name"></h3>
+                        <div id="p2-possession-name" class="possession-name">
+                            <h3 id="p2-name" class="player-name"></h3>
+                            <img src="img/football.png" id="p2-football-icon" class="football-icon" width="42" height="24">
+                        </div>
                         <h3 id="p2-score" class="player-score"></h3>
                     </div>
 
@@ -61,9 +71,7 @@
 
 
 
-            <div id="instruction-div">
-                <h3 id="instruction"></h3>
-            </div>
+
 
 
         <!--                <button id="pause-clock">Pause Clock</button>-->
@@ -75,7 +83,7 @@
         <div id="heading">
             <h1>Football</h1>
             <div id="form">
-                <label for="house">Whose house are you playing at?</label>
+<!--                <label for="house">Whose house are you playing at?</label>-->
                 <select class="form-control" id="house">
                     <option>RaRa's House</option>
                     <option>Pop's House</option>
@@ -96,18 +104,35 @@
         <div id="player-selection">
 
             <div id="p1-card" class="card chosen-player">
-                <h4 class="chosen-name">name</h4>
-                <h4  class="chosen-image">image </h4>
+                <h4 class="chosen-name">Player 1</h4>
+<!--                <h4  class="chosen-image">image </h4>-->
                 <div id="p1-stats" class="stats">
-                    <h4 class="speed">Speed</h4>
-                    <h4 class="agility">Agility</h4>
-                    <h4 class="tackling">Tackling</h4>
-                    <h4 class="offense">Offense</h4>
-                    <h4 class="defense">Defense</h4>
-                    <h4 class="stamina">Stamina</h4>
+                    <h4>Speed</h4>
+                    <div class="speed-scale scale">
+                        <div id="p1-speed" class="stat"></div>
+                    </div>
+                    <h4>Agility</h4>
+                    <div class="agility-scale scale">
+                        <div id="p1-agility" class="stat"></div>
+                    </div>
+                    <h4>Tackling</h4>
+                    <div class="tackling-scale scale">
+                        <div id="p1-tackling" class="stat"></div>
+                    </div>
+                    <h4>Offense</h4>
+                    <div class="offense-scale scale">
+                        <div id="p1-offense" class="stat"></div>
+                    </div>
+                    <h4>Defense</h4>
+                    <div class="defense-scale scale">
+                        <div id="p1-defense" class="stat"></div>
+                    </div>
                 </div>
-                <h4>bio</h4>
-                <button class="select-player">Choose Player</button>
+                <h4>Bio</h4>
+                <h7 id="p1-bio"></h7>
+                <div id="p1-choose" class="select-player-div">
+                    <button class="select-player">Choose Player</button>
+                </div>
 
             </div>
 
@@ -166,17 +191,35 @@
             </div>
 
             <div id="p2-card" class="card chosen-player">
-                <h4 class="chosen-name">name</h4>
+                <h4 class="chosen-name">Player 2</h4>
                 <div id="p2-stats" class="stats">
-                    <h4 class="speed">Speed</h4>
-                    <h4 class="agility">Agility</h4>
-                    <h4 class="tackling">Tackling</h4>
-                    <h4 class="offense">Offense</h4>
-                    <h4 class="defense">Defense</h4>
-                    <h4 class="stamina">Stamina</h4>
+                    <h4>Speed</h4>
+                    <div class="speed-scale scale">
+                        <div id="p2-speed" class="stat"></div>
+                    </div>
+                    <h4>Agility</h4>
+                    <div class="agility-scale scale">
+                        <div id="p2-agility" class="stat"></div>
+                    </div>
+                    <h4>Tackling</h4>
+                    <div class="tackling-scale scale">
+                        <div id="p2-tackling" class="stat"></div>
+                    </div>
+                    <h4>Offense</h4>
+                    <div class="offense-scale scale">
+                        <div id="p2-offense" class="stat"></div>
+                    </div>
+                    <h4>Defense</h4>
+                    <div class="defense-scale scale">
+                        <div id="p2-defense" class="stat"></div>
+                    </div>
                 </div>
-                <h4>bio</h4>
-                <button class="select-player">Choose Player</button>
+                <h4>Bio</h4>
+                <h7 id="p2-bio"></h7>
+                <div id="p2-choose" class="select-player-div">
+                    <button class="select-player">Choose Player</button>
+                </div>
+
             </div>
         </div>
         <button id="ready">Play</button>
