@@ -209,7 +209,7 @@ let players = [
         stamina: 5,
         offense: 1.0,
         defense: 1.2,
-        bio: "bio"
+        bio: "What first comes to mind when thinking of Pop is how old and bald he is. However, it is often overlooked how slow he is as well. Perhaps his wit will save him on the gridiron? It seems unlikely."
     },
     {
         id: 11,
@@ -239,7 +239,7 @@ let players = [
         Y: null,
         xEQ: ($("#pierson-image").get(0).width/2)-9,
         yEQ: ($("#pierson-image").get(0).height/2)-15,
-        tacklingArea: 50,
+        tacklingArea: 100,
         speed: 4,
         agility: 3.5,
         score: 0,
@@ -350,7 +350,7 @@ let players = [
 let player1;
 let player2;
 let startingPosition = 250;
-let defenderDistance = 150;
+let defenderDistance = 180;
 // let readyToChooseP1 = false;
 // let readyToChooseP2 = false;
 let player1Chosen = false;
